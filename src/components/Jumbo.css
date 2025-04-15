@@ -7,24 +7,3 @@
     black 100%
   );
 }
-
-.jumbo-heading {
-  font-size: 48px;
-}
-
-.arrow-down:hover {
-  cursor: pointer;
-  animation: arrowAnimation 1s ease-in-out infinite;
-}
-
-@keyframes arrowAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
