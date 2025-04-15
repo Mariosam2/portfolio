@@ -1,11 +1,13 @@
-import { useState } from "react";
+import Jumbo from "./components/Jumbo";
+import Navbar from "./components/Navbar";
+import ProjectsComponent from "./components/ProjectsComponent";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className="text-3xl">Portfolio</h1>
+      <Navbar />
+      <Jumbo />
+      <ProjectsComponent />
     </>
   );
 }

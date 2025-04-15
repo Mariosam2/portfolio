@@ -1,0 +1,10 @@
+.projects-heading {
+  font-size: 48px;
+}
+
+.project.card .content {
+  background: rgba(40, 40, 40, 0.88);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+}

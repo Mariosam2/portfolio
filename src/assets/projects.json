@@ -1,0 +1,24 @@
+{"projects":
+[
+    {
+    "name": "Boolflix",
+    "description": "The project is a Netflix-inspired platform built using VueJS.The user can add movies to watchlist or preview them with a trailer and related informations",
+    "image": "./boolflix.png",
+    "demo_site": "https://startling-kataifi-00b11a.netlify.app/",
+    "links": []
+    },
+    {
+    "name": "BoolBnB",
+    "description": "lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
+    "image": "./boolbnb.png",
+    "links": []
+    },
+    {
+    "name": "project-3",
+    "description": "lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
+    "image": "./weather-app.png",
+    "links": []
+    }
+   
+]
+}
