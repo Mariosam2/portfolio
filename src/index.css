@@ -4,7 +4,8 @@
 
 @theme {
   --color-ms_purple: #442da3;
-  --color-ms_dark-purple: #0e004a;
+  --color-ms_dark-purple: #00001a;
+  --color-ms_dark: #02010d;
   --color-ms_muted: #dadada;
   --color-ms_light-gray: #848482;
   --color-ms_dark-gray: #282828;
@@ -14,4 +15,78 @@
 
 * {
   font-family: var(--font-roboto);
+}
+
+.layover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.layover.glass {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.light {
+  position: absolute;
+  translate: -50% 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 200px 200px 150px 50px #b7e7f7;
+  filter: saturate(200%);
+}
+
+/* infinite scroll animation */
+.scrolling-text {
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
+  margin: 0;
+}
+.RightToLeft span {
+  display: inline-block;
+  font-size: 148px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 2rem;
+  line-height: 155px;
+}
+
+.RightToLeft {
+  animation: RightToLeft 20s infinite linear;
+}
+
+@keyframes RightToLeft {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -50% 0;
+  }
+}
+
+.iphone {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 672px;
+  height: 100%;
+  background: no-repeat center url("./assets/iphone.png");
+}
+
+.gradient {
+  background: radial-gradient(
+    ellipse 100% 100% at bottom center,
+    white,
+    var(--color-ms_purple) 60%,
+    var(--color-ms_dark-purple) 80%,
+    black 100%
+  );
 }

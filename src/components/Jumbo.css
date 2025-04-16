@@ -1,9 +1,0 @@
-.jumbo {
-  background: radial-gradient(
-    ellipse 100% 100% at bottom center,
-    white,
-    var(--color-ms_purple) 60%,
-    var(--color-ms_dark-purple) 80%,
-    black 100%
-  );
-}
