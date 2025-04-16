@@ -1,24 +1,94 @@
 {"projects":
 [
     {
+    "name": "Spotify Web",
+    "description": "This is a HTML and CSS visual clone of Spotify Web. It attempts to replicate the interface of the popular music streaming platform, focusing on the layout. The main objective was to practice front-end development skills by recreating a real-world UI without using JavaScript or any frameworks",
+    "image": "./spotify-web.png",
+    "demo_site": "https://mariosam2.github.io/html-css-spotifyweb/",
+    "github_links": {
+        "frontend": "https://github.com/Mariosam2/html-css-spotifyweb",
+        "backend": null
+    },
+    "technologies" : [
+        {"icon": "./html_logo.png"},
+        {"icon": "./css.svg"}
+    ],
+    "APIs": []
+    },
+    {
     "name": "Boolflix",
-    "description": "The project is a Netflix-inspired platform built using VueJS.The user can add movies to watchlist or preview them with a trailer and related informations",
+    "description": "The project is a Netflix-inspired platform built using VueJS.The user can search movies or add them to watchlist.Each movies has a preview  with a trailer made with Youtube iFrame API, and related informations",
     "image": "./boolflix.png",
     "demo_site": "https://startling-kataifi-00b11a.netlify.app/",
-    "links": []
+    "github_links": {
+        "frontend": "https://github.com/Mariosam2/vite-boolflix",
+        "backend": null
+    },
+    "technologies" : [
+        {
+            "icon": "./vuejs_logo.png"
+        },
+        {
+            "icon": "./bootstrap-logo.png"
+        }
+    ],
+    "APIs": [
+        {
+            "name":"Youtube iFrame API",
+            "icon": "./youtube.png",
+            "link": "https://developers.google.com/youtube/iframe_api_reference"
+        }
+    ]
     },
     {
     "name": "BoolBnB",
-    "description": "lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
+    "description": "This project is a full-stack Airbnb clone that allows users to search for geolocated rental properties and directly contact hosts via email. Designed to replicate key features of the real Airbnb platform, users can browse apartments based on location using an interactive map. Guests can send inquiries directly to hosts through an integrated email system and if you're an host you can add, edit, delete (CRUD) or sponsorize your apartment.",
     "image": "./boolbnb.png",
-    "links": []
+    "demo_site": null,
+    "github_links": {
+        "frontend": "https://github.com/Mariosam2/frontend-boolbnb",
+        "backend": "https://github.com/Mariosam2/backend-boolbnb"
+    },
+    "technologies" : [
+        {
+            "icon": "./vuejs_logo.png"
+        },
+        {
+            "icon": "./bootstrap-logo.png"
+        },
+        {
+            "icon": "./laravel_logo.png"
+        }
+    ],
+    "APIs": [
+        {"name": "Tomtom API", "icon": "./tomtom.png", "link": "https://developer.tomtom.com/api-explorer-index/documentation/product-information/introduction"},
+        {"name": "Stripe API","icon": "./stripe.svg", "link": "https://docs.stripe.com/" }
+    ]
     },
     {
-    "name": "project-3",
-    "description": "lorem ipsum lorem ipsumlorem ipsumlorem ipsum",
+    "name": "Weather App",
+    "description": "This project is a Weather App where users can search for cities using an autocomplete feature, and view detailed weather information for the selected location with a 2-Day forecast report.",
     "image": "./weather-app.png",
     "demo_site":"https://stunning-syrniki-a76acf.netlify.app/",
-    "links": []
+    "github_links": {
+        "frontend": "https://github.com/Mariosam2/weather_app",
+        "backend": null
+    },
+    "technologies" : [
+        {
+            "icon": "./react_logo.svg"
+        },
+        {
+            "icon": "./tailwind_logo.svg"
+        }
+    ],
+    "APIs": [
+        {
+            "name": "Weather API",
+            "icon": "./weatherapi_logo.webp",
+            "link": "https://www.weatherapi.com/docs/"
+        }
+    ]
     }
    
 ]
