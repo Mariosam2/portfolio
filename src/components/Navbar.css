@@ -1,0 +1,16 @@
+.area {
+  border-color: rgba(255, 255, 255, 0.6);
+  border-style: solid;
+}
+
+.area .rotate-left {
+  margin: 2rem;
+  transform-origin: left;
+  rotate: -90deg;
+}
+
+.area .rotate-right {
+  margin: 2rem;
+  transform-origin: right;
+  rotate: 90deg;
+}

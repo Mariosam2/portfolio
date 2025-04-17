@@ -71,17 +71,30 @@
   }
 }
 
-.iphone {
+.iphone-container {
+  display: grid;
+  place-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: 672px;
-  height: 100%;
-  background: no-repeat center url("./assets/iphone.png");
+  max-width: 365px;
+}
+.iphone-container img {
+  max-width: 100%;
+  height: auto;
 }
 
-.gradient {
+.dinamic-component {
+  padding-top: 5rem;
+  padding-inline: 1rem;
+  border-radius: 3rem;
+  width: 95%;
+  height: 100%;
+  background: black;
+}
+
+/* .gradient {
   background: radial-gradient(
     ellipse 100% 100% at bottom center,
     white,
@@ -89,4 +102,4 @@
     var(--color-ms_dark-purple) 80%,
     black 100%
   );
-}
+} */
