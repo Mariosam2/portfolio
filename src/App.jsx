@@ -22,9 +22,13 @@ function App() {
         </div>
 
         <div className="iphone-container ">
-          <div className="dinamic-component fixed  text-white ">
+          <img className="iphone-img relative z-5" src={IphoneImg} alt="" />
+          <div className="iphone-background z-4">
             <div className="layover layover-iphone"></div>
-            <div className="content relative z-6">
+          </div>
+
+          <div className="dinamic-component z-6  text-white ">
+            <div className="content relative  h-full">
               <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/coding-skills" element={<CodingSkills />} />
@@ -34,7 +38,6 @@ function App() {
               </Routes>
             </div>
           </div>
-          <img className="z-5" src={IphoneImg} alt="" />
         </div>
       </div>
     </>

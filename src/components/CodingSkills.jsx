@@ -1,30 +1,25 @@
 import { useEffect, useRef } from "react";
 import * as codingSkillsJSON from "../assets/coding_skills.json";
+import PhoneApp from "./PhoneApp";
 
 const CodingSkills = () => {
   const codingSkills = useRef(
     JSON.parse(JSON.stringify(codingSkillsJSON.coding_skills))
   );
-  useEffect(() => {
+  /*  useEffect(() => {
     console.log(codingSkills.current);
-  }, []);
+  }, []); */
 
   return (
     <section className="coding-skills grid grid-cols-3">
       {codingSkills.current.map((skill, index) => {
         return (
-          <div
+          <PhoneApp
+            index={null}
             key={index}
-            className="coding-skill col-span-1 flex flex-col  items-center  p-4 "
-          >
-            <img
-              className="w-4/6 min-h-[50px] object-contain"
-              src={skill.img}
-              alt=""
-            />
-
-            <h5 className="font-thin text-xl text-white mt-2">{skill.name}</h5>
-          </div>
+            icon={skill.img}
+            title={skill.name}
+          />
         );
       })}
     </section>

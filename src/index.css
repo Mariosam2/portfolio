@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-ms_black: #28282b;
   --color-ms_purple: #442da3;
   --color-ms_dark-purple: #00001a;
   --color-ms_dark: #02010d;
@@ -91,17 +92,23 @@
   translate: -50% -50%;
   max-width: 365px;
 }
-.iphone-container img {
+.iphone-container .iphone-img {
   max-width: 100%;
   height: auto;
 }
 
-.dinamic-component {
+.dinamic-component,
+.iphone-background {
+  position: fixed;
   padding-top: 5rem;
   padding-inline: 1rem;
+  padding-bottom: 1rem;
   border-radius: 3rem;
   width: 95%;
   height: 100%;
+}
+
+.iphone-background {
   background: url("./assets/iphone_bg.jpg") no-repeat;
   background-size: cover;
 }
