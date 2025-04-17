@@ -1,0 +1,55 @@
+{"coding_skills" : [
+    {
+      "name": "HTML5",
+      "img": "./html_logo.png"
+    },
+    {
+      "name": "CSS",
+      "img": "./css.svg"
+    },
+    {
+      "name": "Saas",
+      
+      "img": "./sass_logo.webp"
+    },
+    {
+      "name": "Bootstrap",
+      "img": "./bootstrap-logo.png"
+    },
+    {
+      "name": "Tailwind",
+      "img": "./tailwind_logo.svg"
+    },
+    {
+      "name": "Javascript",
+      "img": "./js_logo.webp"
+    },
+    {
+      "name": "VueJS",
+      "img": "./vuejs_logo.png"
+    },
+    {
+      "name": "React",
+      "img": "./react_logo.svg"
+    },
+    {
+      "name": "Redux",
+      "img": "./redux_logo.png"
+    },
+    {
+      "name": "PHP",
+      "img": "./php_logo.webp"
+    },
+    {
+      "name": "Laravel",
+      "img": "./laravel_logo.png"
+    },
+    {
+      "name": "MySQL",
+      "img": "./MySQL_logo.webp"
+    },
+    {
+      "name": "Vite",
+      "img": "./vite.svg"
+    }
+  ]}

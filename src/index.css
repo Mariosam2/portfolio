@@ -17,6 +17,16 @@
   font-family: var(--font-roboto);
 }
 
+.app {
+  background: radial-gradient(
+    ellipse 100% 100% at top center,
+    white,
+    var(--color-ms_purple) 60%,
+    var(--color-ms_dark-purple) 80%,
+    black 100%
+  );
+}
+
 .layover {
   position: absolute;
   top: 0;
@@ -54,6 +64,7 @@
   font-size: 148px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6);
+  /* text-shadow: 10px -2px 10px rgba(255, 255, 255, 0.6); */
   margin: 0 2rem;
   line-height: 155px;
 }
@@ -91,7 +102,13 @@
   border-radius: 3rem;
   width: 95%;
   height: 100%;
-  background: black;
+  background: url("./assets/iphone_bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.layover-iphone {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3rem;
 }
 
 /* .gradient {

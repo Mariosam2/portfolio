@@ -1,5 +1,9 @@
 const ProjectsComponent = () => {
-  return <div>Projects</div>;
+  return (
+    <section className="projects">
+      <div className="project-card"></div>
+    </section>
+  );
 };
 
 export default ProjectsComponent;
