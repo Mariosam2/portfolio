@@ -27,3 +27,7 @@
   transform: scale(1);
   transition: transform 0.25s ease-out;
 }
+
+.layover {
+  background-color: rgba(0, 0, 0, 0.6);
+}

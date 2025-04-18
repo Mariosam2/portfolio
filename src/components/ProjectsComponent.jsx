@@ -1,19 +1,21 @@
 import * as projectsJSON from "../assets/projects.json";
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setProject } from "../slices/projectSlice";
 import PhoneApp from "./PhoneApp";
 import ProjectCard from "./ProjectCard";
+import { createPortal } from "react-dom";
 
 const ProjectsComponent = () => {
   const projects = useRef(JSON.parse(JSON.stringify(projectsJSON.projects)));
-  const [project, setProject] = useState(null);
+  const dispatch = useDispatch();
 
   const getProject = (e) => {
     const currentIndex = e.currentTarget.attributes["data-index"].value;
-    setProject(projects.current[currentIndex]);
+    dispatch(setProject({ ...projects.current[currentIndex] }));
   };
 
+  //adding eventlisteners "manually" cause I couldn't attach them directly to the component
   useEffect(() => {
     const apps = document.querySelectorAll(".phone-app");
     apps.forEach((app) => {
@@ -33,7 +35,7 @@ const ProjectsComponent = () => {
           />
         );
       })}
-      <ProjectCard project={project} />
+      {createPortal(<ProjectCard />, document.body)}
     </section>
   );
 };
