@@ -1,7 +1,6 @@
 import "./ProjectCard.css";
 import { ArrowUpOnSquareIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import GithubLogo from "../assets/github_logo.png";
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { unsetProject } from "../slices/projectSlice";
 

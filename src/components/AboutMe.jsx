@@ -1,16 +1,29 @@
+import PhoneApp from "./PhoneApp";
+import AboutMeIcon from "../assets/about_me.png";
+import { createPortal } from "react-dom";
+import { useEffect, useState } from "react";
+import AboutMeCard from "./AboutMeCard";
+import { useDispatch, useSelector } from "react-redux";
+import { open } from "../slices/cardSlice";
+
 const AboutMe = () => {
+  const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.cardState.isOpen);
+
+  useEffect(() => {
+    const phoneApp = document.querySelector(".phone-app");
+    phoneApp.addEventListener("click", () => {
+      console.log("click");
+      dispatch(open());
+    });
+  }, []);
+
   return (
     <section className="about-me">
-      <h1 className="mx-auto">About me</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
-      </p>
+      <div className="grid grid-cols-3">
+        <PhoneApp icon={AboutMeIcon} title={"About Me"} />
+      </div>
+      {createPortal(<AboutMeCard visible={isOpen} />, document.body)}
     </section>
   );
 };
