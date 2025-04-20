@@ -17,6 +17,7 @@ const Contacts = () => {
       dispatch(open());
     });
   }, []);
+
   return (
     <section className="contacts">
       <div className="grid grid-cols-3">

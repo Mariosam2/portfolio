@@ -6,9 +6,6 @@ const CodingSkills = () => {
   const codingSkills = useRef(
     JSON.parse(JSON.stringify(codingSkillsJSON.coding_skills))
   );
-  /*  useEffect(() => {
-    console.log(codingSkills.current);
-  }, []); */
 
   return (
     <section className="coding-skills grid grid-cols-3">

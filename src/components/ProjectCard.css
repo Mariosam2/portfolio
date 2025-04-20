@@ -1,31 +1,40 @@
 .project-card {
-  background: rgba(68, 45, 163, 0.24);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border: 1px solid rgba(68, 45, 163, 0.3);
-}
-
-.project-card .content {
-  background: rgba(167, 152, 209, 0.5);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.4px);
-  -webkit-backdrop-filter: blur(4.4px);
-  border: 1px solid rgba(167, 152, 209, 0.3);
-}
-
-.project-card {
   visibility: hidden;
-  transform: scale(0);
-  transition: transform 0.25s ease-out;
+  scale: 0;
+  background: rgba(0, 0, 0, 0.67);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(4.7px);
+  backdrop-filter: blur(4.7px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease;
 }
 
 .project-card.visible {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
   visibility: visible;
-  transform: scale(1);
-  transition: transform 0.25s ease-out;
+  transition: all 0.1s ease;
+  scale: 1;
+}
+
+.glow {
+  z-index: 7;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 180px 180px 110px 60px rgba(68, 45, 163, 0.5);
+}
+
+.glow.top-left {
+  left: -180px;
+  top: -180px;
+}
+
+.glow.right-bottom {
+  bottom: 180px;
+  right: 180px;
 }
 
 .layover {
