@@ -1,4 +1,7 @@
-.project-card {
+.project-card,
+.about-me-card,
+.contacts-card {
+  overflow: clip;
   visibility: hidden;
   scale: 0;
   background: rgba(0, 0, 0, 0.67);
@@ -9,7 +12,9 @@
   transition: all 0.1s ease;
 }
 
-.project-card.visible {
+.project-card.visible,
+.about-me-card.visible,
+.contacts-card.visible {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: transform;

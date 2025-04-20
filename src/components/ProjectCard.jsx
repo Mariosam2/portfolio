@@ -1,13 +1,11 @@
-import "./ProjectCard.css";
-import { useRef } from "react";
-import { ArrowUpOnSquareIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import "./Cards.css";
+import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import GithubLogo from "../assets/github_logo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
 
 const ProjectCard = () => {
-  const cardRef = useRef(null);
   const project = useSelector((state) => state.projectState.project);
   const dispatch = useDispatch();
   const config = {
@@ -45,6 +43,7 @@ const ProjectCard = () => {
         return (
           <a
             key={index}
+            target="_blank"
             href={link.link}
             className="badge p-2 flex items-center"
           >
@@ -59,7 +58,11 @@ const ProjectCard = () => {
   const ShowDemoSite = () => {
     if (project?.demo_site) {
       return (
-        <a href={project.demo_site} className="badge p-2 flex items-center">
+        <a
+          target="_blank"
+          href={project.demo_site}
+          className="badge p-2 flex items-center"
+        >
           Demo site <ArrowUpOnSquareIcon className="size-6 ms-2" />
         </a>
       );
@@ -75,9 +78,8 @@ const ProjectCard = () => {
   const closeProject = () => {
     dispatch(unsetProject());
   };
-
+  //TODO: create file animation.js with these functions and import them
   //card animation handlers
-
   const transformToCss = (x, y) =>
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)`;
 
@@ -104,7 +106,7 @@ const ProjectCard = () => {
   return (
     <>
       <animated.div
-        className={`project-card fixed top-1/2 z-8 left-1/2 translate-x-[-50%] translate-y-[-50%]   text-white overflow-clip  w-[400px]  rounded-2xl ${
+        className={`project-card fixed top-1/2 z-8 left-1/2 translate-x-[-50%] translate-y-[-50%]   text-white   w-[400px]  rounded-2xl ${
           project !== null ? "visible" : ""
         }`}
         onMouseLeave={handleMouseLeave}
