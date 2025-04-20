@@ -12,18 +12,15 @@ const ProjectCard = () => {
   const dispatch = useDispatch();
   const config = {
     mass: 1,
-    tension: 120,
-    friction: 50,
+    tension: 200,
+    friction: 10,
   };
-  const [{ xys }, api] = useSpring(
-    () => ({ xys: [0, 0, 1], config }),
-    [config]
-  );
+  const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
 
   const ShowApis = () => {
     if (project?.APIs?.length > 0) {
       return (
-        <div className="flex items-end justify-end">
+        <div className="flex items-start justify-end">
           <span className="inline-block">APIs:</span>
           <div className="apis">
             {project.APIs.map((api, index) => {
@@ -81,28 +78,26 @@ const ProjectCard = () => {
 
   //card animation handlers
 
-  const transformToCss = (x, y, s) =>
-    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+  const transformToCss = (x, y) =>
+    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)`;
 
-  //TODO: making the animation more accentuated
   const calc = (x, y, rect) => {
     const buffer = 80;
     return [
       -(y - rect.top - rect.height / 2) / buffer,
       (x - rect.left - rect.width / 2) / buffer,
-      1,
     ];
   };
 
   const handleMouseLeave = () =>
     api.start({
-      xys: [0, 0, 1],
+      xy: [0, 0],
     });
 
   const handleMouseMove = (e) => {
     const rectangle = document.body.getBoundingClientRect();
     api.start({
-      xys: calc(e.clientX, e.clientY, rectangle),
+      xy: calc(e.clientX, e.clientY, rectangle),
     });
   };
 
@@ -114,7 +109,7 @@ const ProjectCard = () => {
         }`}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
-        style={{ transform: xys.to(transformToCss) }}
+        style={{ transform: xy.to(transformToCss) }}
       >
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
