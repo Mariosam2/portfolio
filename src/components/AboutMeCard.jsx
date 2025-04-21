@@ -1,9 +1,15 @@
 import "./Cards.css";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import avatarImg from "../assets/avatar_pc_nobg.png";
 import { close } from "../slices/cardSlice";
 import { useDispatch } from "react-redux";
+import { config, transformToCss, calc } from "../assets/cardAnimation";
+import { animated, useSpring } from "@react-spring/web";
+
 const AboutMeCard = ({ visible }) => {
   const dispatch = useDispatch();
+  const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
+
   const ShowLayover = () => {
     if (visible) {
       return (
@@ -14,9 +20,25 @@ const AboutMeCard = ({ visible }) => {
       );
     }
   };
+
+  //animation handlers
+  const handleMouseLeave = () =>
+    api.start({
+      xy: [0, 0],
+    });
+
+  const handleMouseMove = (e) => {
+    const rectangle = document.body.getBoundingClientRect();
+    api.start({
+      xy: calc(e.clientX, e.clientY, rectangle),
+    });
+  };
   return (
     <>
-      <div
+      <animated.div
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+        style={{ transform: xy.to(transformToCss) }}
         className={`about-me-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white w-[400px] z-8 p-4 ${
           visible ? "visible" : ""
         }`}
@@ -24,14 +46,49 @@ const AboutMeCard = ({ visible }) => {
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
         <div className="content relative z-9">
-          <div className="heading mb-2 ">About Me</div>
+          <div className=" mb-2  flex items-center p-2">
+            <img
+              className="size-12 bg-white rounded-full me-2"
+              src={avatarImg}
+              alt=""
+            />
+            <h2 className="heading font-bold text-2xl">About Me</h2>
+          </div>
           <p className=" font-light p-2 rounded-xl ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-            non aspernatur amet quidem expedita minima eligendi aperiam eos,
-            inventore sunt.
+            My name is Marco Mariosa, I’m 23 years old, and I have a strong
+            passion for motorcycles, video games, technology and whatever takes
+            creativity. My journey into the world of computers began at the age
+            of 13, thanks to my grandfather, who not only introduced me to
+            technology but also worked in the IT industry himself. His influence
+            sparked a deep interest that quickly evolved into a long-term
+            commitment to learning. Since then, I’ve continued to expand my
+            skills and knowledge, driven by curiosity and a desire to create.
+            Whether it’s exploring new technologies or approaching challenges, ,
+            I’m always looking for ways to grow both personally and
+            professionally.
           </p>
+
+          <div className="pdf-links pt-4 flex">
+            <div className="pdf-link flex items-center p-2 bg-white text-black max-w-fit rounded-xl me-3">
+              <a
+                className="inline-block"
+                href="./curriculum.pdf"
+                target="_blank"
+              >
+                Curriculum Vitae
+              </a>
+              <ArrowUpOnSquareIcon className="size-6 ms-2" />
+            </div>
+
+            <div className="pdf-link flex items-center p-2  bg-white text-black  max-w-fit rounded-xl">
+              <a className="inline-block" href="./boolean.pdf" target="_blank">
+                Boolean Course
+              </a>
+              <ArrowUpOnSquareIcon className="size-6 ms-2" />
+            </div>
+          </div>
         </div>
-      </div>
+      </animated.div>
       <ShowLayover />
     </>
   );

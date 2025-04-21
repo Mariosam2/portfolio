@@ -1,9 +1,15 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import contactsIcon from "../assets/contacts.png";
 import { useDispatch } from "react-redux";
 import { close } from "../slices/cardSlice";
+import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import githubLogo from "../assets/github_logo.png";
+import discordLogo from "../assets/discord_logo.svg";
+import { config, transformToCss, calc } from "../assets/cardAnimation";
+import { animated, useSpring } from "@react-spring/web";
 
 const ContactsCard = ({ visible }) => {
   const dispatch = useDispatch();
+  const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
   const ShowLayover = () => {
     if (visible) {
       return (
@@ -14,9 +20,25 @@ const ContactsCard = ({ visible }) => {
       );
     }
   };
+
+  //animation handlers
+  const handleMouseLeave = () =>
+    api.start({
+      xy: [0, 0],
+    });
+
+  const handleMouseMove = (e) => {
+    const rectangle = document.body.getBoundingClientRect();
+    api.start({
+      xy: calc(e.clientX, e.clientY, rectangle),
+    });
+  };
   return (
     <>
-      <div
+      <animated.div
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+        style={{ transform: xy.to(transformToCss) }}
         className={`contacts-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white w-[400px] z-8  p-4 ${
           visible ? "visible" : ""
         }`}
@@ -24,14 +46,30 @@ const ContactsCard = ({ visible }) => {
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
         <div className="content  relative z-9">
-          <div className="heading mb-2 ">Contacts</div>
-          <p className="content font-light p-2 rounded-xl">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-            non aspernatur amet quidem expedita minima eligendi aperiam eos,
-            inventore sunt.
-          </p>
+          <div className="flex items-center px-2 mb-2 ">
+            <h2 className="heading font-bold text-2xl">Contacts</h2>
+            <img className="size-10 ms-2" src={contactsIcon} alt="" />
+          </div>
+          <div className="content flex flex-col p-2 pt-4 gap-y-3">
+            <div className="phone flex items-center">
+              <PhoneIcon className="size-5 me-2" />
+              +41 79 5305143
+            </div>
+            <div className="mail flex items-center">
+              <EnvelopeIcon className="size-5 me-2" />
+              mariosamdev@gmail.com
+            </div>
+            <div className="github flex items-center">
+              <img src={githubLogo} className="size-5 me-2" />
+              Mariosam2
+            </div>
+            <div className="discord flex items-center">
+              <img src={discordLogo} className="size-5 me-2" />
+              faco0_
+            </div>
+          </div>
         </div>
-      </div>
+      </animated.div>
       <ShowLayover />
     </>
   );

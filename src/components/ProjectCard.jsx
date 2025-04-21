@@ -4,28 +4,24 @@ import GithubLogo from "../assets/github_logo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
+import { config, transformToCss, calc } from "../assets/cardAnimation";
 
 const ProjectCard = () => {
   const project = useSelector((state) => state.projectState.project);
   const dispatch = useDispatch();
-  const config = {
-    mass: 1,
-    tension: 200,
-    friction: 10,
-  };
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
 
   const ShowApis = () => {
     if (project?.APIs?.length > 0) {
       return (
         <div className="flex items-start justify-end">
-          <span className="inline-block">APIs:</span>
+          <span className="inline-block pt-2">APIs:</span>
           <div className="apis">
             {project.APIs.map((api, index) => {
               return (
                 <img
                   key={index}
-                  className="size-8 ms-2"
+                  className="size-8 ms-2 pt-2"
                   src={api.icon}
                   alt=""
                 />
@@ -78,18 +74,8 @@ const ProjectCard = () => {
   const closeProject = () => {
     dispatch(unsetProject());
   };
-  //TODO: create file animation.js with these functions and import them
-  //card animation handlers
-  const transformToCss = (x, y) =>
-    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)`;
 
-  const calc = (x, y, rect) => {
-    const buffer = 80;
-    return [
-      -(y - rect.top - rect.height / 2) / buffer,
-      (x - rect.left - rect.width / 2) / buffer,
-    ];
-  };
+  //card animation handlers
 
   const handleMouseLeave = () =>
     api.start({
