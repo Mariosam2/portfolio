@@ -1,7 +1,7 @@
 import PhoneApp from "./PhoneApp";
 import AboutMeIcon from "../assets/about_me.png";
 import { createPortal } from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AboutMeCard from "./AboutMeCard";
 import { useDispatch, useSelector } from "react-redux";
 import { open } from "../slices/cardSlice";
@@ -10,23 +10,25 @@ import Loader from "./Loader";
 
 const AboutMe = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state) => state.cardState.isOpen);
   const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
     dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
+      setIsComponentReady(true);
     }, 750);
   }, []);
 
   useEffect(() => {
-    const phoneApp = document.querySelector(".phone-app");
-    phoneApp.addEventListener("click", () => {
-      console.log("click");
-      dispatch(open());
-    });
-  }, []);
+    if (isComponentReady) {
+      const phoneApp = document.querySelector(".phone-app");
+      phoneApp.addEventListener("click", () => {
+        dispatch(open());
+      });
+    }
+  }, [isComponentReady]);
 
   const ShowLoader = () => {
     if (isLoading) {
@@ -37,7 +39,7 @@ const AboutMe = () => {
           <div className="grid grid-cols-3">
             <PhoneApp icon={AboutMeIcon} title={"About Me"} />
           </div>
-          {createPortal(<AboutMeCard visible={isOpen} />, document.body)}
+          {createPortal(<AboutMeCard />, document.body)}
         </section>
       );
     }

@@ -1,5 +1,5 @@
 import * as projectsJSON from "../assets/projects.json";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProject } from "../slices/projectSlice";
 import PhoneApp from "./PhoneApp";
@@ -12,21 +12,26 @@ const ProjectsComponent = () => {
   const projects = useRef(JSON.parse(JSON.stringify(projectsJSON.projects)));
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
     dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
+      setIsComponentReady(true);
     }, 750);
   }, []);
 
   //adding eventlisteners "manually" cause I couldn't attach them directly to the component
   useEffect(() => {
-    const apps = document.querySelectorAll(".phone-app");
-    apps.forEach((app) => {
-      app.addEventListener("click", getProject);
-    });
-  }, []);
+    if (isComponentReady) {
+      //console.log(isComponentReady);
+      const apps = document.querySelectorAll(".phone-app");
+      apps.forEach((app) => {
+        app.addEventListener("click", getProject);
+      });
+    }
+  }, [isComponentReady]);
 
   const getProject = (e) => {
     const currentIndex = e.currentTarget.attributes["data-index"].value;

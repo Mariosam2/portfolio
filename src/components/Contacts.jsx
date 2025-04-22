@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import contactsIcon from "../assets/contacts.png";
 import { useDispatch, useSelector } from "react-redux";
 import { open } from "../slices/cardSlice";
@@ -10,23 +10,27 @@ import Loader from "./Loader";
 
 const Contacts = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state) => state.cardState.isOpen);
   const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
     dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
+      setIsComponentReady(true);
     }, 750);
   }, []);
 
   useEffect(() => {
-    const phoneApp = document.querySelector(".phone-app");
-    phoneApp.addEventListener("click", () => {
-      console.log("click");
-      dispatch(open());
-    });
-  }, []);
+    if (isComponentReady) {
+      const phoneApp = document.querySelector(".phone-app");
+
+      phoneApp.addEventListener("click", () => {
+        console.log("click");
+        dispatch(open());
+      });
+    }
+  }, [isComponentReady]);
 
   const ShowLoader = () => {
     if (isLoading) {
@@ -37,7 +41,7 @@ const Contacts = () => {
           <div className="grid grid-cols-3">
             <PhoneApp icon={contactsIcon} title={"Contacts"} />
           </div>
-          {createPortal(<ContactsCard visible={isOpen} />, document.body)}
+          {createPortal(<ContactsCard />, document.body)}
         </section>
       );
     }

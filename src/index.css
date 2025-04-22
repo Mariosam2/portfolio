@@ -49,8 +49,10 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  box-shadow: 200px 200px 150px 50px #b7e7f7;
   filter: saturate(200%);
+
+  animation: LightPulse 5s infinite ease-in-out;
+  animation-direction: alternate-reverse;
 }
 
 /* infinite scroll animation */
@@ -72,15 +74,6 @@
 
 .RightToLeft {
   animation: RightToLeft 20s infinite linear;
-}
-
-@keyframes RightToLeft {
-  from {
-    translate: 0 0;
-  }
-  to {
-    translate: -50% 0;
-  }
 }
 
 .iphone-container {
@@ -120,6 +113,24 @@
 
 section {
   animation: fadeIn 0.25s linear;
+}
+
+@keyframes LightPulse {
+  from {
+    box-shadow: 200px 200px 100px 50px #b7e7f7;
+  }
+  to {
+    box-shadow: 250px 250px 150px 100px #b7e7f7;
+  }
+}
+
+@keyframes RightToLeft {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -50% 0;
+  }
 }
 
 @keyframes fadeIn {

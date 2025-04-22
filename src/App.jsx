@@ -6,14 +6,16 @@ import CodingSkills from "./components/CodingSkills";
 import Contacts from "./components/Contacts";
 import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
+import { animated, useSpring } from "@react-spring/web";
+import { useEffect } from "react";
 
 function App() {
   return (
     <>
       <div className="app h-screen  z-0 relative overflow-hidden">
         <Navbar />
-        <div className="light purple -z-40 top-1/5 left-1/4"></div>
-        <div className="light dark-purple -z-40 top-1/3 left-1/3"></div>
+        <div className="light -z-40 top-1/6 left-1/5"></div>
+        <div className="light -z-40 top-1/3 left-1/3"></div>
         <div className="layover glass -z-30"></div>
         <div className="scrolling-text -z-20">
           <div className="RightToLeft">

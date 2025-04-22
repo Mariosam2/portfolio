@@ -1,5 +1,5 @@
 import contactsIcon from "../assets/contacts.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { close } from "../slices/cardSlice";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import githubLogo from "../assets/github_logo.png";
@@ -9,9 +9,10 @@ import { animated, useSpring } from "@react-spring/web";
 
 const ContactsCard = ({ visible }) => {
   const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.cardState.isOpen);
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
   const ShowLayover = () => {
-    if (visible) {
+    if (isOpen) {
       return (
         <div
           onClick={() => dispatch(close())}
@@ -40,7 +41,7 @@ const ContactsCard = ({ visible }) => {
         onMouseMove={handleMouseMove}
         style={{ transform: xy.to(transformToCss) }}
         className={`contacts-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white w-[400px] z-8  p-4 ${
-          visible ? "visible" : ""
+          isOpen ? "visible" : ""
         }`}
       >
         <div className="glow top-left"></div>

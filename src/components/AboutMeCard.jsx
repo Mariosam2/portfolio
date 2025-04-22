@@ -2,16 +2,17 @@ import "./Cards.css";
 import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
 import avatarImg from "../assets/avatar_pc_nobg.png";
 import { close } from "../slices/cardSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
 import { animated, useSpring } from "@react-spring/web";
 
-const AboutMeCard = ({ visible }) => {
+const AboutMeCard = () => {
   const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.cardState.isOpen);
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
 
   const ShowLayover = () => {
-    if (visible) {
+    if (isOpen) {
       return (
         <div
           onClick={() => dispatch(close())}
@@ -40,7 +41,7 @@ const AboutMeCard = ({ visible }) => {
         onMouseMove={handleMouseMove}
         style={{ transform: xy.to(transformToCss) }}
         className={`about-me-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white w-[400px] z-8 p-4 ${
-          visible ? "visible" : ""
+          isOpen ? "visible" : ""
         }`}
       >
         <div className="glow top-left"></div>
