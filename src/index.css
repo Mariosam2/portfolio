@@ -118,12 +118,15 @@
   border-radius: 3rem;
 }
 
-/* .gradient {
-  background: radial-gradient(
-    ellipse 100% 100% at bottom center,
-    white,
-    var(--color-ms_purple) 60%,
-    var(--color-ms_dark-purple) 80%,
-    black 100%
-  );
-} */
+section {
+  animation: fadeIn 0.25s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

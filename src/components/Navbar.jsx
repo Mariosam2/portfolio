@@ -7,7 +7,7 @@ const Navbar = () => {
      text-white "
     >
       <NavLink
-        to="/coding-skills"
+        to={"/coding-skills"}
         className="coding-skills  area col-span-1 row-span-1 relative border-e border-b "
       >
         <span className="rotate-left absolute top-1/2 translate-y-[-50%] left-0">
@@ -15,7 +15,7 @@ const Navbar = () => {
         </span>
       </NavLink>
       <NavLink
-        to="/about-me"
+        to={"/about-me"}
         className="about-me area col-span-1 row-span-1 relative border-b"
       >
         <span className="rotate-right absolute top-1/2 right-0 translate-y-[-50%]">
@@ -23,7 +23,7 @@ const Navbar = () => {
         </span>
       </NavLink>
       <NavLink
-        to="/projects"
+        to={"/projects"}
         className="projects area col-span-1 row-span-1 relative border-e"
       >
         <span className="rotate-left absolute top-1/2 translate-y-[-50%] left-0">
@@ -31,7 +31,7 @@ const Navbar = () => {
         </span>
       </NavLink>
       <NavLink
-        to="/contacts"
+        to={"/contacts"}
         className="contacts area col-span-1 row-span-1 relative"
       >
         <span className="rotate-right absolute top-1/2 right-0 translate-y-[-50%]">

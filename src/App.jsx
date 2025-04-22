@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import ProjectsComponent from "./components/ProjectsComponent";
-import { Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import CodingSkills from "./components/CodingSkills";
 import Contacts from "./components/Contacts";
 import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
+
 function App() {
   return (
     <>
@@ -30,7 +31,7 @@ function App() {
           <div className="dinamic-component z-6  text-white ">
             <div className="content relative  h-full">
               <Routes>
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Home />} />
                 <Route path="/coding-skills" element={<CodingSkills />} />
                 <Route path="/projects" element={<ProjectsComponent />} />
                 <Route path="/about-me" element={<AboutMe />} />
