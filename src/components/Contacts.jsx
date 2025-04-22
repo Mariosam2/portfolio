@@ -10,7 +10,7 @@ import Loader from "./Loader";
 
 const Contacts = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const { isLoading, delay } = useSelector((state) => state.loadingState);
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Contacts = () => {
     setTimeout(() => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
-    }, 750);
+    }, delay);
   }, []);
 
   useEffect(() => {

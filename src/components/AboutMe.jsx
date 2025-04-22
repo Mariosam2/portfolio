@@ -10,7 +10,7 @@ import Loader from "./Loader";
 
 const AboutMe = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const { isLoading, delay } = useSelector((state) => state.loadingState);
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const AboutMe = () => {
     setTimeout(() => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
-    }, 750);
+    }, delay);
   }, []);
 
   useEffect(() => {

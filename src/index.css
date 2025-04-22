@@ -21,7 +21,7 @@
 .app {
   background: radial-gradient(
     ellipse 100% 100% at top center,
-    white,
+    var(--color-ms_light-purple),
     var(--color-ms_purple) 60%,
     var(--color-ms_dark-purple) 80%,
     black 100%
@@ -41,6 +41,20 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+}
+
+#cursor {
+  position: absolute;
+  translate: -50% -50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 70px 70px 40px 20px white;
+}
+
+#cursor.mouse-down {
+  box-shadow: 70px 70px 30px 15px white;
+  transition: all 0.1s ease;
 }
 
 .light {

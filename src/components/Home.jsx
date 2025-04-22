@@ -5,12 +5,12 @@ import Loader from "./Loader";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const { isLoading, delay } = useSelector((state) => state.loadingState);
   useEffect(() => {
     dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
-    }, 750);
+    }, delay);
   }, []);
 
   const ShowLoader = () => {

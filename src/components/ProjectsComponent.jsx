@@ -11,7 +11,7 @@ import Loader from "./Loader";
 const ProjectsComponent = () => {
   const projects = useRef(JSON.parse(JSON.stringify(projectsJSON.projects)));
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const { isLoading, delay } = useSelector((state) => state.loadingState);
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const ProjectsComponent = () => {
     setTimeout(() => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
-    }, 750);
+    }, delay);
   }, []);
 
   //adding eventlisteners "manually" cause I couldn't attach them directly to the component
