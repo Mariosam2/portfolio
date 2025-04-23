@@ -125,7 +125,7 @@
   border-radius: 3rem;
 }
 
-section {
+section:not(.home) {
   animation: fadeIn 0.25s linear;
 }
 

@@ -24,7 +24,6 @@ const Contacts = () => {
   useEffect(() => {
     if (isComponentReady) {
       const phoneApp = document.querySelector(".phone-app");
-
       phoneApp.addEventListener("click", () => {
         console.log("click");
         dispatch(open());

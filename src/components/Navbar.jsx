@@ -43,7 +43,7 @@ const Navbar = ({
       className="navbar grid grid-cols-2 grid-rows-2 absolute w-full h-screen -z-10
      text-white "
     >
-      {navLinks.map((navLink) => {
+      {navLinks.map((navLink, index) => {
         return (
           <NavLink
             onMouseEnter={showCursor}
@@ -52,6 +52,7 @@ const Navbar = ({
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             to={navLink.path}
+            key={index}
             className={`${navLink.class} area col-span-1 row-span-1 relative ${navLink.border}`}
           >
             <span

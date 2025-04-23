@@ -1,0 +1,14 @@
+.time {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.time .dots {
+  animation: blink 2s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

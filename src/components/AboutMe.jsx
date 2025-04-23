@@ -1,5 +1,5 @@
 import PhoneApp from "./PhoneApp";
-import AboutMeIcon from "../assets/about_me.png";
+import avatarImg from "../assets/avatar_pc_nobg.png";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import AboutMeCard from "./AboutMeCard";
@@ -37,7 +37,7 @@ const AboutMe = () => {
       return (
         <section className="about-me">
           <div className="grid grid-cols-3">
-            <PhoneApp icon={AboutMeIcon} title={"About Me"} />
+            <PhoneApp icon={avatarImg} title={"About Me"} />
           </div>
           {createPortal(<AboutMeCard />, document.body)}
         </section>
