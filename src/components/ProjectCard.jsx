@@ -92,7 +92,7 @@ const ProjectCard = () => {
   return (
     <>
       <animated.div
-        className={`project-card fixed top-1/2 z-8 left-1/2 translate-x-[-50%] translate-y-[-50%]   text-white   w-[400px]  rounded-2xl ${
+        className={`project-card fixed top-1/2 z-8 left-1/2 translate-x-[-50%] translate-y-[-50%]   text-white  rounded-2xl ${
           project !== null ? "visible" : ""
         }`}
         onMouseLeave={handleMouseLeave}
@@ -119,7 +119,7 @@ const ProjectCard = () => {
                     return (
                       <img
                         key={index}
-                        className="size-8 ms-2"
+                        className="size-6 xxs:size-8 ms-2"
                         src={technology.icon}
                         alt=""
                       />
@@ -129,7 +129,9 @@ const ProjectCard = () => {
             </div>
           </div>
 
-          <p className="font-light py-4">{project?.description}</p>
+          <p className="font-light text-sm xxs:text-base py-4">
+            {project?.description}
+          </p>
           <div className="card-footer grid grid-cols-2">
             <div className="badges">
               <ShowDemoSite />

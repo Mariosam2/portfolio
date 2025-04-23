@@ -25,7 +25,7 @@ const CodingSkills = () => {
       return <Loader />;
     } else {
       return (
-        <section className="coding-skills grid grid-cols-3">
+        <section className="coding-skills grid grid-cols-3 ">
           {codingSkills.current.map((skill, index) => {
             return (
               <PhoneApp

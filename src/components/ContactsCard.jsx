@@ -40,7 +40,7 @@ const ContactsCard = ({ visible }) => {
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
         style={{ transform: xy.to(transformToCss) }}
-        className={`contacts-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white w-[400px] z-8  p-4 ${
+        className={`contacts-card rounded-2xl fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-white z-8  p-4 ${
           isOpen ? "visible" : ""
         }`}
       >

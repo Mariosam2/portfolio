@@ -12,7 +12,6 @@ const Home = () => {
   const { isLoading, delay } = useSelector((state) => state.loadingState);
   const [date, setDate] = useState(null);
   const intervalId = useRef(null);
-  const routePath = useLocation().pathname;
 
   useEffect(() => {
     dispatch(loading());

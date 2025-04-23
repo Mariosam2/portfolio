@@ -11,7 +11,10 @@ import { useRef } from "react";
 function App() {
   const cursorRef = useRef(null);
   const showCursor = () => {
-    cursorRef.current.style.visibility = "visible";
+    console.log(window.innerWidth);
+    if (window.innerWidth > 1024) {
+      cursorRef.current.style.visibility = "visible";
+    }
   };
 
   const hidCursor = () => {
@@ -55,13 +58,13 @@ function App() {
           </div>
         </div>
 
-        <div className="iphone-container ">
+        <div className="iphone-container">
           <img className="iphone-img relative z-5" src={IphoneImg} alt="" />
           <div className="iphone-background z-4">
             <div className="layover layover-iphone"></div>
           </div>
 
-          <div className="dinamic-component z-6  text-white ">
+          <div className="dinamic-component z-6  text-white  @container  ">
             <div className="content relative  h-full">
               <Routes>
                 <Route path="/" element={<Home />} />

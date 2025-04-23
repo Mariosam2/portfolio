@@ -12,6 +12,9 @@
   --color-ms_dark-gray: #282828;
   --color-ms_light-purple: #a798d1;
   --font-roboto: "Roboto", sans-serif;
+  --breakpoint-xxs: 365px;
+  --breakpoint-xs: 430px;
+  --breakpoint-sm: 650px;
 }
 
 * {
@@ -153,5 +156,19 @@ section:not(.home) {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 366px) {
+  .iphone-container {
+    width: 100%;
+    max-width: none;
+    padding-inline: 1rem;
+  }
+  .iphone-background {
+    width: 85%;
+  }
+  .dinamic-component {
+    padding-top: 3rem;
   }
 }
