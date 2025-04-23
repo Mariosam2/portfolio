@@ -56,7 +56,7 @@ const Navbar = ({
             className={`${navLink.class} area col-span-1 row-span-1 relative ${navLink.border}`}
           >
             <span
-              className={`rotate-${navLink.rotate} absolute top-1/2 translate-y-[-50%] ${navLink.rotate}-0 capitalize`}
+              className={`rotate-${navLink.rotate} absolute top-1/2 translate-y-[-50%]  ${navLink.rotate}-0 capitalize`}
             >
               &#123;{navLink.content}&#125;
             </span>
