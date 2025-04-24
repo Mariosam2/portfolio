@@ -39,35 +39,38 @@ const Navbar = ({
   ];
 
   return (
-    <nav
-      className="navbar grid grid-cols-2 grid-rows-2 absolute w-full h-screen -z-10
+    <>
+      <nav
+        className="navbar hidden sm:grid  grid-cols-2 grid-rows-2 absolute w-full h-screen -z-10
      text-white "
-    >
-      {navLinks.map((navLink, index) => {
-        return (
-          <NavLink
-            onMouseEnter={showCursor}
-            onMouseMove={moveCursor}
-            onMouseLeave={hidCursor}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            to={navLink.path}
-            key={index}
-            className={`${navLink.class} area col-span-1 row-span-1 relative ${navLink.border}`}
-          >
-            <span
-              className={`rotate-${navLink.rotate} absolute top-1/2 translate-y-[-50%] capitalize`}
-              style={{
-                left: navLink.rotate === "left" ? 0 : "unset",
-                right: navLink.rotate === "right" ? 0 : "unset",
-              }}
+      >
+        {navLinks.map((navLink, index) => {
+          return (
+            <NavLink
+              onMouseEnter={showCursor}
+              onMouseMove={moveCursor}
+              onMouseLeave={hidCursor}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              to={navLink.path}
+              key={index}
+              className={`${navLink.class} area col-span-1 row-span-1 relative ${navLink.border}`}
             >
-              &#123;{navLink.content}&#125;
-            </span>
-          </NavLink>
-        );
-      })}
-    </nav>
+              <span
+                className={`rotate-${navLink.rotate} absolute top-1/2 translate-y-[-50%] capitalize`}
+                style={{
+                  left: navLink.rotate === "left" ? 0 : "unset",
+                  right: navLink.rotate === "right" ? 0 : "unset",
+                }}
+              >
+                &#123;{navLink.content}&#125;
+              </span>
+            </NavLink>
+          );
+        })}
+      </nav>
+      <nav className="mobile-nav block sm:hidden"></nav>
+    </>
   );
 };
 

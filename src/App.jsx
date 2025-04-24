@@ -1,20 +1,33 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import ProjectsComponent from "./components/ProjectsComponent";
-import { Routes, Route, useLocation } from "react-router";
+import { Routes, Route, useLocation, NavLink } from "react-router";
 import CodingSkills from "./components/CodingSkills";
 import Contacts from "./components/Contacts";
 import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
 import { useRef } from "react";
+import homeIcon from "./assets/home.png";
 
 function App() {
   const cursorRef = useRef(null);
-  const showCursor = () => {
-    console.log(window.innerWidth);
-    if (window.innerWidth > 1024) {
-      cursorRef.current.style.visibility = "visible";
+  const routePath = useLocation().pathname;
+
+  const ShowHomeLink = () => {
+    if (routePath !== "/") {
+      return (
+        <NavLink
+          className="absolute bottom-6 left-1/2 translate-x-[-50%]"
+          to={"/"}
+        >
+          <img className="size-8" src={homeIcon} alt="" />
+        </NavLink>
+      );
     }
+  };
+
+  const showCursor = () => {
+    cursorRef.current.style.visibility = "visible";
   };
 
   const hidCursor = () => {
@@ -73,6 +86,7 @@ function App() {
                 <Route path="/about-me" element={<AboutMe />} />
                 <Route path="/contacts" element={<Contacts />} />
               </Routes>
+              <ShowHomeLink />
             </div>
           </div>
         </div>
