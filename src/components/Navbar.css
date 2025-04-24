@@ -14,3 +14,57 @@
   transform-origin: right;
   rotate: 90deg;
 }
+
+/*Burger animation*/
+
+.burger .line {
+  transition: all 0.2s ease-out;
+}
+
+.burger .line.close:nth-child(1) {
+  transform: rotate(45deg);
+  translate: 0 7px;
+  transition: all 0.2s ease-out;
+}
+
+.burger .line.close:nth-child(2) {
+  translate: 28px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.burger .line.close:nth-child(3) {
+  transform: rotate(-45deg);
+  translate: 0 -7px;
+  transition: all 0.2s ease-out;
+}
+
+/* Mobile Navbar */
+
+.ms_mobile-nav {
+  position: fixed;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 70%,
+    rgba(68, 45, 163, 0.6) 70%
+  );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 0 0 4rem 0;
+  top: 0;
+  width: 110%;
+  height: 110%;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: all 0.1s ease-out;
+}
+
+.ms_mobile-nav.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.1s ease-out;
+}

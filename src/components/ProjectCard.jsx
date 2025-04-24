@@ -15,7 +15,7 @@ const ProjectCard = () => {
     if (project?.APIs?.length > 0) {
       return (
         <div className="flex items-start justify-end">
-          <span className="inline-block pt-2">APIs:</span>
+          <span className="inline-block pt-2 text-sm sm:text-base">APIs:</span>
           <div className="apis">
             {project.APIs.map((api, index) => {
               return (
@@ -41,7 +41,7 @@ const ProjectCard = () => {
             key={index}
             target="_blank"
             href={link.link}
-            className="badge p-2 flex items-center"
+            className="badge py-2 flex items-center text-sm sm:text-base"
           >
             <span className="capitalize">{link.title}</span>
             <img className="size-6 ms-2" src={GithubLogo} alt="" />
@@ -57,7 +57,7 @@ const ProjectCard = () => {
         <a
           target="_blank"
           href={project.demo_site}
-          className="badge p-2 flex items-center"
+          className="badge py-2 flex items-center text-sm sm:text-base"
         >
           Demo site <ArrowUpOnSquareIcon className="size-6 ms-2" />
         </a>
@@ -129,7 +129,7 @@ const ProjectCard = () => {
             </div>
           </div>
 
-          <p className="font-light text-sm xxs:text-base py-4">
+          <p className="font-light  text-sm sm:text-base py-4">
             {project?.description}
           </p>
           <div className="card-footer grid grid-cols-2">

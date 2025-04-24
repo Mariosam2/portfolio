@@ -49,13 +49,13 @@ const AboutMeCard = () => {
         <div className="content relative z-9">
           <div className=" mb-2  flex items-center p-2">
             <img
-              className="size-12 bg-white rounded-full me-2"
+              className="size-10 xxs:size-12 bg-white rounded-full me-3"
               src={avatarImg}
               alt=""
             />
             <h2 className="heading font-bold text-2xl">About Me</h2>
           </div>
-          <p className=" font-light p-2 rounded-xl ">
+          <p className=" font-light p-2 rounded-xl text-sm sm:text-base ">
             My name is Marco Mariosa, I’m 23 years old, and I have a strong
             passion for motorcycles, video games, technology and whatever takes
             creativity. My journey into the world of computers began at the age
@@ -69,10 +69,10 @@ const AboutMeCard = () => {
             professionally.
           </p>
 
-          <div className="pdf-links pt-4 flex">
-            <div className="pdf-link flex items-center p-2 bg-white text-black max-w-fit rounded-xl me-3">
+          <div className="pdf-links pt-4 flex flex-wrap xs:flex-nowrap gap-y-2 xs:gap-y-0">
+            <div className="pdf-link flex  items-center p-2 bg-white text-black max-w-fit rounded-xl me-3">
               <a
-                className="inline-block"
+                className="inline-block text-sm sm:text-base"
                 href="./curriculum.pdf"
                 target="_blank"
               >
@@ -82,7 +82,11 @@ const AboutMeCard = () => {
             </div>
 
             <div className="pdf-link flex items-center p-2  bg-white text-black  max-w-fit rounded-xl">
-              <a className="inline-block" href="./boolean.pdf" target="_blank">
+              <a
+                className="inline-block text-sm sm:text-base"
+                href="./boolean.pdf"
+                target="_blank"
+              >
                 Boolean Course
               </a>
               <ArrowUpOnSquareIcon className="size-6 ms-2" />

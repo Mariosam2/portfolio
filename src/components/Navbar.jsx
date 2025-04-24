@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
+
 const Navbar = ({
   moveCursor,
   showCursor,
@@ -7,6 +9,13 @@ const Navbar = ({
   handleMouseDown,
   handleMouseUp,
 }) => {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const route = useLocation();
+
+  useEffect(() => {
+    setShowMobileNav(false);
+  }, [route]);
+
   const navLinks = [
     {
       path: "/coding-skills",
@@ -37,6 +46,10 @@ const Navbar = ({
       border: "",
     },
   ];
+
+  const toggleMobileNav = () => {
+    setShowMobileNav(!showMobileNav);
+  };
 
   return (
     <>
@@ -69,7 +82,46 @@ const Navbar = ({
           );
         })}
       </nav>
-      <nav className="mobile-nav block sm:hidden"></nav>
+      <div
+        onClick={toggleMobileNav}
+        className={`burger flex flex-col sm:hidden  gap-y-1 p-4 relative z-2`}
+      >
+        <div
+          className={`line ${
+            showMobileNav ? "close" : " "
+          } h-[3px] w-7 bg-white rounded-2xl relative`}
+        ></div>
+        <div
+          className={`line ${
+            showMobileNav ? "close" : " "
+          } h-[3px] w-7 bg-white rounded-2xl relative`}
+        ></div>
+        <div
+          className={`line ${
+            showMobileNav ? "close" : " "
+          } h-[3px] w-7 bg-white rounded-2xl relative`}
+        ></div>
+      </div>
+      <nav
+        className={`ms_mobile-nav  z-1 flex sm:hidden  flex-col gap-y-2 ps-3 pt-20 ${
+          showMobileNav ? "visible" : " "
+        }`}
+      >
+        <NavLink className="text-white p-2 font-semibold text-lg" to={"/"}>
+          <span className="capitalize">Home</span>
+        </NavLink>
+        {navLinks.map((navLink, index) => {
+          return (
+            <NavLink
+              className="text-white p-2 font-semibold text-lg"
+              key={index}
+              to={navLink.path}
+            >
+              <span className="capitalize">{navLink.content}</span>
+            </NavLink>
+          );
+        })}
+      </nav>
     </>
   );
 };

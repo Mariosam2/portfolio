@@ -85,12 +85,12 @@ const Home = () => {
             </div>
           </div>
           <img
-            className="flashlight size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-8"
+            className="flashlight size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-8"
             src={flashlightIcon}
             alt=""
           />
           <img
-            className="camera size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-8"
+            className="camera size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-8"
             src={cameraIcon}
             alt=""
           />

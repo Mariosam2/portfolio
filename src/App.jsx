@@ -17,17 +17,19 @@ function App() {
     if (routePath !== "/") {
       return (
         <NavLink
-          className="absolute bottom-6 left-1/2 translate-x-[-50%]"
+          className="absolute bottom-2 xxs:bottom-4 md:bottom-6 left-1/2 translate-x-[-50%]"
           to={"/"}
         >
-          <img className="size-8" src={homeIcon} alt="" />
+          <img className="size-6 xxs:size-8" src={homeIcon} alt="" />
         </NavLink>
       );
     }
   };
 
   const showCursor = () => {
-    cursorRef.current.style.visibility = "visible";
+    if (window.innerWidth > 1024) {
+      cursorRef.current.style.visibility = "visible";
+    }
   };
 
   const hidCursor = () => {
