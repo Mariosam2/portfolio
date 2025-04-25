@@ -1,6 +1,6 @@
 import "./Cards.css";
-import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
-import GithubLogo from "../assets/github_logo.png";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import GithubLogo from "../assets/github.png";
 import { useSelector, useDispatch } from "react-redux";
 import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
@@ -19,12 +19,17 @@ const ProjectCard = () => {
           <div className="apis">
             {project.APIs.map((api, index) => {
               return (
-                <img
-                  key={index}
-                  className="size-8 ms-2 pt-2"
-                  src={api.icon}
-                  alt=""
-                />
+                <a
+                  className="grid place-items-center ms-2 pt-2"
+                  href={api.link}
+                >
+                  <img
+                    key={index}
+                    className="w-12 h-6  object-contain"
+                    src={api.icon}
+                    alt=""
+                  />
+                </a>
               );
             })}
           </div>
@@ -59,7 +64,7 @@ const ProjectCard = () => {
           href={project.demo_site}
           className="badge py-2 flex items-center text-sm sm:text-base"
         >
-          Demo site <ArrowUpOnSquareIcon className="size-6 ms-2" />
+          Demo site <ArrowTopRightOnSquareIcon className="size-6 ms-2" />
         </a>
       );
     }

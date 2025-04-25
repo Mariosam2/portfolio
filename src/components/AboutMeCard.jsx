@@ -1,5 +1,5 @@
 import "./Cards.css";
-import { ArrowUpOnSquareIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import avatarImg from "../assets/avatar_pc_nobg.png";
 import { close } from "../slices/cardSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -78,7 +78,7 @@ const AboutMeCard = () => {
               >
                 Curriculum Vitae
               </a>
-              <ArrowUpOnSquareIcon className="size-6 ms-2" />
+              <ArrowTopRightOnSquareIcon className="size-6 ms-2  mb-1" />
             </div>
 
             <div className="pdf-link flex items-center p-2  bg-white text-black  max-w-fit rounded-xl">
@@ -89,7 +89,7 @@ const AboutMeCard = () => {
               >
                 Boolean Course
               </a>
-              <ArrowUpOnSquareIcon className="size-6 ms-2" />
+              <ArrowTopRightOnSquareIcon className="size-6 ms-2 mb-1" />
             </div>
           </div>
         </div>

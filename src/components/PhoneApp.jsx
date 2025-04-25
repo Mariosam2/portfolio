@@ -2,9 +2,13 @@ const PhoneApp = ({ index, icon, title }) => {
   return (
     <div
       data-index={index !== null ? index : ""}
-      className="phone-app flex flex-col  justify-center items-center pt-4 px-2 xxs:py-2"
+      className="phone-app flex flex-col  justify-center items-center pt-4 px-0 xxs:px-2 xxs:py-2"
     >
-      <img className="w-4/6 h-[50px] object-contain" src={icon} alt="" />
+      <img
+        className="w-4/6 h-[50px] xxs:h-[60px] object-contain"
+        src={icon}
+        alt=""
+      />
       <h5 className="font-medium text-xs xs:text-sm sm:text-base text-white mt-2 text-nowrap">
         {title}
       </h5>

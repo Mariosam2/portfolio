@@ -1,4 +1,4 @@
-import contactsIcon from "../assets/contacts.png";
+/* import contactsIcon from "../assets/contacts.png";
 import { useDispatch, useSelector } from "react-redux";
 import { close } from "../slices/cardSlice";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
@@ -77,3 +77,4 @@ const ContactsCard = ({ visible }) => {
 };
 
 export default ContactsCard;
+ */

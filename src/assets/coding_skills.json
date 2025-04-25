@@ -1,55 +1,56 @@
-{"coding_skills" : [
+{
+  "coding_skills": [
     {
       "name": "HTML5",
-      "img": "./html_logo.png"
+      "img": "./html_5.png"
     },
     {
       "name": "CSS",
-      "img": "./css.svg"
+      "img": "./css.png"
     },
     {
       "name": "Saas",
-      
-      "img": "./sass_logo.webp"
+      "img": "./sass.png"
     },
     {
       "name": "Bootstrap",
-      "img": "./bootstrap-logo.png"
+      "img": "./bootstrap.png"
     },
     {
       "name": "Tailwind",
-      "img": "./tailwind_logo.svg"
+      "img": "./tailwind.png"
     },
     {
       "name": "Javascript",
-      "img": "./js_logo.webp"
+      "img": "./javascript.png"
     },
     {
       "name": "VueJS",
-      "img": "./vuejs_logo.png"
+      "img": "./vue.png"
     },
     {
       "name": "React",
-      "img": "./react_logo.svg"
+      "img": "./react.png"
     },
     {
       "name": "Redux",
-      "img": "./redux_logo.png"
+      "img": "./redux.png"
     },
     {
       "name": "PHP",
-      "img": "./php_logo.webp"
+      "img": "./php.png"
     },
     {
       "name": "Laravel",
-      "img": "./laravel_logo.png"
+      "img": "./laravel.png"
     },
     {
       "name": "MySQL",
-      "img": "./MySQL_logo.webp"
+      "img": "./mysql.png"
     },
     {
       "name": "Vite",
-      "img": "./vite.svg"
+      "img": "./vite.png"
     }
-  ]}
+  ]
+}
