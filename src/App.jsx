@@ -11,7 +11,6 @@ import homeIcon from "./assets/home.png";
 
 function App() {
   const cursorRef = useRef(null);
-
   const routePath = useLocation().pathname;
 
   const ShowHomeLink = () => {

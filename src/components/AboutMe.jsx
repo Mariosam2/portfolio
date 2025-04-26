@@ -33,7 +33,7 @@ const AboutMe = () => {
 
   return (
     <>
-      {/* the loader component "knows" wether or not be shown */}
+      {/* the loader component "knows" wheter or not be shown */}
       <Loader />
       <section className={`about-me ${isLoading ? "loading" : ""}`}>
         <div className="grid grid-cols-3">

@@ -70,7 +70,7 @@ const Home = () => {
 
   return (
     <>
-      {/* the loader component "knows" wether or not be shown */}
+      {/* the loader component "knows" wheter or not be shown */}
       <Loader />
       <section
         className={`home h-full  relative ${isLoading ? "loading" : ""}`}

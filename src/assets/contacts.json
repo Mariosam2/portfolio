@@ -3,22 +3,22 @@
     {
       "name": "e-mail",
       "icon": "./mail.png",
-      "title": "mariosamdev@gmail.com"
+      "content": "mariosamdev@gmail.com"
     },
     {
       "name": "cell-number",
       "icon": "./phone.png",
-      "title": "..."
+      "content": "..."
     },
     {
       "name": "github",
       "icon": "./github.png",
-      "title": "Mariosam2"
+      "content": "Mariosam2"
     },
     {
       "name": "discord",
       "icon": "./discord.png",
-      "title": "faco0_"
+      "content": "faco0_"
     }
   ]
 }

@@ -22,7 +22,7 @@ const CodingSkills = () => {
 
   return (
     <>
-      {/* the loader component "knows" wether or not be shown */}
+      {/* the loader component "knows" wheter or not be shown */}
       <Loader />
       <section
         className={`coding-skills ${
