@@ -1,0 +1,24 @@
+{
+  "contacts": [
+    {
+      "name": "e-mail",
+      "icon": "./mail.png",
+      "title": "mariosamdev@gmail.com"
+    },
+    {
+      "name": "cell-number",
+      "icon": "./phone.png",
+      "title": "..."
+    },
+    {
+      "name": "github",
+      "icon": "./github.png",
+      "title": "Mariosam2"
+    },
+    {
+      "name": "discord",
+      "icon": "./discord.png",
+      "title": "faco0_"
+    }
+  ]
+}

@@ -128,8 +128,14 @@
   border-radius: 3rem;
 }
 
-section:not(.home) {
-  animation: fadeIn 0.25s linear;
+section {
+  opacity: 1;
+  transition: opacity 0.25s ease-out;
+}
+
+section.loading {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
 }
 
 @keyframes LightPulse {
@@ -147,15 +153,6 @@ section:not(.home) {
   }
   to {
     translate: -50% 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 

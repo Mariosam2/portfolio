@@ -1,14 +1,14 @@
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import lottieLoader from "../assets/loader.lottie";
+import { useSelector } from "react-redux";
+import "./Loader.css";
 const Loader = () => {
+  const { isLoading } = useSelector((state) => state.loadingState);
   return (
-    <div className="loader absolute w-full h-full">
-      <DotLottieReact
-        className="w-[500px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] "
-        src={lottieLoader}
-        loop
-        autoplay
-      />
+    <div
+      className={`loader-container ${
+        isLoading ? "block" : "hidden"
+      } absolute top-2/5 left-1/2 translate-x-[-50%] translate-y-[-50%] p-4`}
+    >
+      <div className="loader"></div>
     </div>
   );
 };

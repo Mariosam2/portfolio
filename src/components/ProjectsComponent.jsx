@@ -38,28 +38,29 @@ const ProjectsComponent = () => {
     dispatch(setProject({ ...projects.current[currentIndex] }));
   };
 
-  const ShowLoader = () => {
-    if (isLoading) {
-      return <Loader />;
-    } else {
-      return (
-        <section className="projects relative w-full  grid grid-cols-3 ">
-          {projects.current.map((project, index) => {
-            return (
-              <PhoneApp
-                index={index}
-                key={index}
-                icon={project.icon}
-                title={project.name}
-              />
-            );
-          })}
-          {createPortal(<ProjectCard />, document.body)}
-        </section>
-      );
-    }
-  };
-  return <ShowLoader />;
+  return (
+    <>
+      {/* the loader component "knows" wether or not be shown */}
+      <Loader />
+      <section
+        className={`projects ${
+          isLoading ? "loading" : ""
+        } relative w-full  grid grid-cols-3`}
+      >
+        {projects.current.map((project, index) => {
+          return (
+            <PhoneApp
+              index={index}
+              key={index}
+              icon={project.icon}
+              title={project.name}
+            />
+          );
+        })}
+        {createPortal(<ProjectCard />, document.body)}
+      </section>
+    </>
+  );
 };
 
 export default ProjectsComponent;

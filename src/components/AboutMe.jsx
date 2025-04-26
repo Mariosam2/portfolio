@@ -1,5 +1,5 @@
 import PhoneApp from "./PhoneApp";
-import avatarImg from "../assets/avatar_pc_nobg.png";
+import AboutMeIcon from "../assets/aboutme.png";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import AboutMeCard from "./AboutMeCard";
@@ -23,6 +23,7 @@ const AboutMe = () => {
 
   useEffect(() => {
     if (isComponentReady) {
+      console.log(isComponentReady);
       const phoneApp = document.querySelector(".phone-app");
       phoneApp.addEventListener("click", () => {
         dispatch(open());
@@ -30,22 +31,18 @@ const AboutMe = () => {
     }
   }, [isComponentReady]);
 
-  const ShowLoader = () => {
-    if (isLoading) {
-      return <Loader />;
-    } else {
-      return (
-        <section className="about-me">
-          <div className="grid grid-cols-3">
-            <PhoneApp icon={avatarImg} title={"About Me"} />
-          </div>
-          {createPortal(<AboutMeCard />, document.body)}
-        </section>
-      );
-    }
-  };
-
-  return <ShowLoader />;
+  return (
+    <>
+      {/* the loader component "knows" wether or not be shown */}
+      <Loader />
+      <section className={`about-me ${isLoading ? "loading" : ""}`}>
+        <div className="grid grid-cols-3">
+          <PhoneApp icon={AboutMeIcon} title={"About Me"} />
+        </div>
+        {createPortal(<AboutMeCard />, document.body)}
+      </section>
+    </>
+  );
 };
 
 export default AboutMe;

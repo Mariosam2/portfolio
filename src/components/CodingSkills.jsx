@@ -20,28 +20,28 @@ const CodingSkills = () => {
     }, 500);
   }, []);
 
-  const ShowLoader = () => {
-    if (isLoading) {
-      return <Loader />;
-    } else {
-      return (
-        <section className="coding-skills grid grid-cols-3 ">
-          {codingSkills.current.map((skill, index) => {
-            return (
-              <PhoneApp
-                index={null}
-                key={index}
-                icon={skill.img}
-                title={skill.name}
-              />
-            );
-          })}
-        </section>
-      );
-    }
-  };
-
-  return <ShowLoader />;
+  return (
+    <>
+      {/* the loader component "knows" wether or not be shown */}
+      <Loader />
+      <section
+        className={`coding-skills ${
+          isLoading ? "loading" : ""
+        } grid grid-cols-3`}
+      >
+        {codingSkills.current.map((skill, index) => {
+          return (
+            <PhoneApp
+              index={null}
+              key={index}
+              icon={skill.img}
+              title={skill.name}
+            />
+          );
+        })}
+      </section>
+    </>
+  );
 };
 
 export default CodingSkills;

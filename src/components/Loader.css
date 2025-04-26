@@ -1,0 +1,24 @@
+.loader {
+  height: 80px;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  filter: blur(12px);
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(#a798d1 0 5%, #442da3, #b7e7f7 20% 50%);
+  filter: saturate(400%);
+  animation: l2 2s linear infinite;
+}
+
+@keyframes l2 {
+  to {
+    rotate: 1turn;
+  }
+}

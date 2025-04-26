@@ -68,37 +68,36 @@ const Home = () => {
     });
   };
 
-  const ShowLoader = () => {
-    if (isLoading) {
-      return <Loader />;
-    } else {
-      return (
-        <section className="home h-full  relative">
-          <div className="content pt-12">
-            <div className="date flex justify-center">
-              <span>{date?.day}</span>
-            </div>
-            <div className="time flex justify-center">
-              <span className="hours">{date?.hours}</span>
-              <span className="dots mx-1">:</span>
-              <span className="minutes">{date?.minutes}</span>
-            </div>
+  return (
+    <>
+      {/* the loader component "knows" wether or not be shown */}
+      <Loader />
+      <section
+        className={`home h-full  relative ${isLoading ? "loading" : ""}`}
+      >
+        <div className="content pt-12">
+          <div className="date flex justify-center">
+            <span>{date?.day}</span>
           </div>
-          <img
-            className="flashlight size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-8"
-            src={flashlightIcon}
-            alt=""
-          />
-          <img
-            className="camera size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-8"
-            src={cameraIcon}
-            alt=""
-          />
-        </section>
-      );
-    }
-  };
-  return <ShowLoader />;
+          <div className="time flex justify-center">
+            <span className="hours">{date?.hours}</span>
+            <span className="dots mx-1">:</span>
+            <span className="minutes">{date?.minutes}</span>
+          </div>
+        </div>
+        <img
+          className="flashlight size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-8"
+          src={flashlightIcon}
+          alt=""
+        />
+        <img
+          className="camera size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-8"
+          src={cameraIcon}
+          alt=""
+        />
+      </section>
+    </>
+  );
 };
 
 export default Home;

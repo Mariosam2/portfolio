@@ -6,11 +6,12 @@ import CodingSkills from "./components/CodingSkills";
 import Contacts from "./components/Contacts";
 import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import homeIcon from "./assets/home.png";
 
 function App() {
   const cursorRef = useRef(null);
+
   const routePath = useLocation().pathname;
 
   const ShowHomeLink = () => {

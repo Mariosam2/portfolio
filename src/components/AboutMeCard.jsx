@@ -1,6 +1,7 @@
 import "./Cards.css";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import avatarImg from "../assets/avatar_pc_nobg.png";
+import aboutMeImg from "../assets/aboutme.png";
 import { close } from "../slices/cardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
@@ -49,8 +50,8 @@ const AboutMeCard = () => {
         <div className="content relative z-9">
           <div className=" mb-2  flex items-center p-2">
             <img
-              className="size-10 xxs:size-12 bg-white rounded-full me-3"
-              src={avatarImg}
+              className="size-10 xxs:size-12  me-3"
+              src={aboutMeImg}
               alt=""
             />
             <h2 className="heading font-bold text-2xl">About Me</h2>
