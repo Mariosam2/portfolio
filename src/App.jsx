@@ -67,9 +67,13 @@ function App() {
         <div className="light -z-40 top-1/3 left-1/3"></div>
         <div className="layover glass -z-30"></div>
         <div className="scrolling-text -z-20">
-          <div className="RightToLeft">
-            <span>Hi I'm Marco, I'm a Junior Web Developer.</span>
-            <span>Hi I'm Marco, I'm a Junior Web Developer.</span>
+          <div className="RightToLeft text-[100px]/[100px] lg:text-[150px]/[150px] line-he">
+            <span className="mx-4">
+              Hi I'm Marco, I'm a Junior Web Developer.
+            </span>
+            <span className="mx-4">
+              Hi I'm Marco, I'm a Junior Web Developer.
+            </span>
           </div>
         </div>
 

@@ -81,16 +81,14 @@
 }
 .RightToLeft span {
   display: inline-block;
-  font-size: 148px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6);
   /* text-shadow: 10px -2px 10px rgba(255, 255, 255, 0.6); */
-  margin: 0 2rem;
-  line-height: 155px;
 }
 
 .RightToLeft {
   animation: RightToLeft 20s infinite linear;
+  animation-delay: 1s;
 }
 
 .iphone-container {

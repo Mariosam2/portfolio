@@ -33,9 +33,11 @@ const Contacts = () => {
       .writeText(text)
       .then(() => {
         //text copied in the clipboard
+        console.log("testo copiato");
       })
-      .catch(() => {
+      .catch((err) => {
         //error while copying the text
+        console.log("errore", err);
       });
   };
 
@@ -51,7 +53,7 @@ const Contacts = () => {
                 className="contact relative "
                 onMouseOver={handleMouseOver}
                 onMouseLeave={handleMouseLeave}
-                onClick={writeClipboard(contact.content)}
+                onClick={() => writeClipboard(contact.content)}
                 key={index}
               >
                 <PhoneApp icon={contact.icon} />
