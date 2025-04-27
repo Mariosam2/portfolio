@@ -21,6 +21,10 @@
   font-family: var(--font-roboto);
 }
 
+body {
+  overflow: hidden;
+}
+
 .app {
   background: radial-gradient(
     ellipse 100% 100% at top center,
@@ -103,6 +107,7 @@
 .iphone-container .iphone-img {
   max-width: 100%;
   height: auto;
+  max-height: 80vh;
 }
 
 .dinamic-component,
