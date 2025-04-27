@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import homeIcon from "./assets/home.png";
 import { loading } from "./slices/loadingSlice";
 import { useDispatch } from "react-redux";
+import TextImg from "./assets/text.svg";
 
 function App() {
   const cursorRef = useRef(null);
@@ -62,7 +63,7 @@ function App() {
 
   return (
     <>
-      <div className="app h-screen  z-0 relative overflow-hidden">
+      <div className="app h-screen  z-0 relative overflow-x-clip overflow-y-visible">
         <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}
@@ -75,13 +76,37 @@ function App() {
         <div className="light -z-40 top-1/3 left-1/3"></div>
         <div className="layover glass -z-30"></div>
         <div className="scrolling-text -z-20">
-          <div className="RightToLeft text-[100px]/[100px] lg:text-[150px]/[150px] line-he">
-            <span className="mx-4">
-              Hi I'm Marco, I'm a Junior Web Developer.
-            </span>
-            <span className="mx-4">
-              Hi I'm Marco, I'm a Junior Web Developer.
-            </span>
+          <div className="RightToLeft   flex ">
+            <svg className="w-screen mx-4 xxs:mx-8">
+              <defs>
+                <filter id="trans-shadow">
+                  <feGaussianBlur stdDeviation="5" />
+                  <feComposite operator="out" in2="SourceGraphic" />
+                </filter>
+              </defs>
+              <image
+                width={100 + "%"}
+                className="h-[100px] lg:h-[150px]"
+                filter="url(#trans-shadow)"
+                xlinkHref={TextImg}
+                href={TextImg}
+              />
+            </svg>
+            <svg className="w-screen mx-4 xxs:mx-8">
+              <defs>
+                <filter id="trans-shadow">
+                  <feGaussianBlur stdDeviation="5" />
+                  <feComposite operator="out" in2="SourceGraphic" />
+                </filter>
+              </defs>
+              <image
+                width={100 + "%"}
+                className="h-[100px] lg:h-[150px]"
+                filter="url(#trans-shadow)"
+                xlinkHref={TextImg}
+                href={TextImg}
+              />
+            </svg>
           </div>
         </div>
 

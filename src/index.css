@@ -21,16 +21,12 @@
   font-family: var(--font-roboto);
 }
 
-body {
-  overflow: hidden;
-}
-
 .app {
   background: radial-gradient(
     ellipse 100% 100% at top center,
     var(--color-ms_light-purple),
-    var(--color-ms_purple) 60%,
-    var(--color-ms_dark-purple) 80%,
+    var(--color-ms_purple) 40%,
+    var(--color-ms_dark-purple) 60%,
     black 100%
   );
 }
@@ -79,15 +75,35 @@ body {
 /* infinite scroll animation */
 .scrolling-text {
   position: absolute;
+  overflow: clip;
   bottom: 0;
-  white-space: nowrap;
   margin: 0;
 }
-.RightToLeft span {
-  display: inline-block;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  /* text-shadow: 10px -2px 10px rgba(255, 255, 255, 0.6); */
+
+.RightToLeft svg {
+  filter: blur(100px) saturate(180%);
+  background: linear-gradient(
+    to right,
+    var(--color-ms_purple) 40%,
+    transparent,
+    var(--color-ms_dark-purple) 80%,
+    transparent,
+    #b7e7f7 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Chrome, Safari and all webkit browsers */
+  -webkit-mask-image: url(./src/assets/text.svg);
+  -webkit-mask-size: cover;
+  -webkit-mask-position: left center;
+  -webkit-mask-repeat: no-repeat;
+
+  /* FIREFOX */
+  mask-image: url(./src/assets/text.svg);
+  mask-size: contain;
+  mask-position: left center;
+  mask-repeat: no-repeat;
 }
 
 .RightToLeft {
@@ -107,7 +123,6 @@ body {
 .iphone-container .iphone-img {
   max-width: 100%;
   height: auto;
-  max-height: 60vh;
 }
 
 .dinamic-component,
