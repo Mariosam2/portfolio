@@ -94,13 +94,13 @@
   background-attachment: fixed;
 
   /* Chrome, Safari and all webkit browsers */
-  -webkit-mask-image: url(./src/assets/text.svg);
+  -webkit-mask-image: url(./text.svg);
   -webkit-mask-size: cover;
   -webkit-mask-position: left center;
   -webkit-mask-repeat: no-repeat;
 
   /* FIREFOX */
-  mask-image: url(./src/assets/text.svg);
+  mask-image: url(./text.svg);
   mask-size: contain;
   mask-position: left center;
   mask-repeat: no-repeat;
