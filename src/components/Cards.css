@@ -10,7 +10,7 @@
   -webkit-backdrop-filter: blur(4.7px);
   backdrop-filter: blur(4.7px);
   border: 1px solid rgba(0, 0, 0, 0.3);
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .project-card.visible,
@@ -20,7 +20,7 @@
   transform-style: preserve-3d;
   will-change: transform;
   visibility: visible;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
   scale: 1;
 }
 
