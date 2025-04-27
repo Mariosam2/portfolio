@@ -4,11 +4,13 @@ import * as contactsJSON from "../assets/contacts.json";
 import PhoneApp from "./PhoneApp";
 import { finishedLoading, loading } from "../slices/loadingSlice";
 import Loader from "./Loader";
+import { copied, didntCopyYet, errorWhileCopying } from "../slices/copySlice";
 
 const Contacts = () => {
   const contacts = useRef(JSON.parse(JSON.stringify(contactsJSON)).contacts);
   const dispatch = useDispatch();
   const { isLoading, delay } = useSelector((state) => state.loadingState);
+  const currentIndex = useRef(null);
 
   useEffect(() => {
     dispatch(loading());
@@ -21,23 +23,50 @@ const Contacts = () => {
   const handleMouseOver = (e) => {
     const clipboard = e.currentTarget.querySelector(".clipboard");
     clipboard.classList.add("visible");
+    if (
+      currentIndex.current !== null &&
+      currentIndex.current !==
+        Number(e.currentTarget.getAttribute("data-index"))
+    ) {
+      const previous = document.querySelector(
+        `.contact[data-index="${currentIndex.current}"] .clipboard`
+      );
+      previous.classList.remove("visible");
+      dispatch(didntCopyYet());
+    }
   };
 
   const handleMouseLeave = (e) => {
-    const clipboard = e.currentTarget.querySelector(".clipboard");
-    clipboard.classList.remove("visible");
+    console.log("mouse leave");
+    if (
+      currentIndex.current !==
+      Number(e.currentTarget.getAttribute("data-index"))
+    ) {
+      const clipboard = e.currentTarget.querySelector(".clipboard");
+      clipboard.classList.remove("visible");
+      dispatch(didntCopyYet());
+    }
   };
 
-  const writeClipboard = (text) => {
+  const writeClipboard = (text, e) => {
+    currentIndex.current = Number(e.currentTarget.getAttribute("data-index"));
+    const body = document.body;
+    body.style.pointerEvents = "none";
     navigator.clipboard
       .writeText(text)
       .then(() => {
         //text copied in the clipboard
-        console.log("testo copiato");
+        dispatch(copied());
+        setTimeout(() => {
+          body.style.pointerEvents = "all";
+        }, 500);
       })
       .catch((err) => {
         //error while copying the text
-        console.log("errore", err);
+        dispatch(errorWhileCopying());
+        setTimeout(() => {
+          body.style.pointerEvents = "all";
+        }, 500);
       });
   };
 
@@ -50,10 +79,11 @@ const Contacts = () => {
           {contacts.current?.map((contact, index) => {
             return (
               <div
+                data-index={index}
                 className="contact relative "
                 onMouseOver={handleMouseOver}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => writeClipboard(contact.content)}
+                onClick={(e) => writeClipboard(contact.content, e)}
                 key={index}
               >
                 <PhoneApp icon={contact.icon} />

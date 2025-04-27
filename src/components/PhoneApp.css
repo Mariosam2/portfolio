@@ -7,7 +7,6 @@
   right: 0;
   border-radius: 0.75rem;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
 }
 
 .clipboard.visible {

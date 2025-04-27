@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
-import { ClipboardIcon } from "@heroicons/react/24/outline";
 import "./PhoneApp.css";
+import ClipboardIcon from "./ClipboardIcon";
 
 const PhoneApp = ({ index, icon, title }) => {
   const routePath = useLocation().pathname;
@@ -9,7 +9,7 @@ const PhoneApp = ({ index, icon, title }) => {
     if (routePath === "/contacts") {
       return (
         <div className="clipboard absolute grid place-items-center">
-          <ClipboardIcon className="size-7" />
+          <ClipboardIcon />
         </div>
       );
     }
@@ -42,6 +42,7 @@ const PhoneApp = ({ index, icon, title }) => {
       >
         <ShowClipboard />
       </div>
+
       <ShowTitle />
     </div>
   );

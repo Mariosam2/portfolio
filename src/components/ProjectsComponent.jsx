@@ -49,12 +49,14 @@ const ProjectsComponent = () => {
       >
         {projects.current.map((project, index) => {
           return (
-            <PhoneApp
-              index={index}
-              key={index}
-              icon={project.icon}
-              title={project.name}
-            />
+            <div className="cursor-pointer">
+              <PhoneApp
+                index={index}
+                key={index}
+                icon={project.icon}
+                title={project.name}
+              />
+            </div>
           );
         })}
         {createPortal(<ProjectCard />, document.body)}

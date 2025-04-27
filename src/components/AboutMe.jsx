@@ -37,7 +37,9 @@ const AboutMe = () => {
       <Loader />
       <section className={`about-me ${isLoading ? "loading" : ""}`}>
         <div className="grid grid-cols-3">
-          <PhoneApp icon={AboutMeIcon} title={"About Me"} />
+          <div className="cursor-pointer">
+            <PhoneApp icon={AboutMeIcon} title={"About Me"} />
+          </div>
         </div>
         {createPortal(<AboutMeCard />, document.body)}
       </section>
