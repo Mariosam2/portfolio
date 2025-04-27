@@ -13,11 +13,11 @@ const Contacts = () => {
   const currentIndex = useRef(null);
 
   useEffect(() => {
-    dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
     }, delay);
   }, []);
+
   //the clipboard is rendered in the PhoneApp component, but since is rendered only when route is "/contacts",
   // we can put the logic here
   const handleMouseOver = (e) => {

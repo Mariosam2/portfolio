@@ -14,7 +14,6 @@ const AboutMe = () => {
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
-    dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
@@ -23,7 +22,7 @@ const AboutMe = () => {
 
   useEffect(() => {
     if (isComponentReady) {
-      console.log(isComponentReady);
+      //console.log(isComponentReady);
       const phoneApp = document.querySelector(".phone-app");
       phoneApp.addEventListener("click", () => {
         dispatch(open());

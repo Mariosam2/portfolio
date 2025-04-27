@@ -14,7 +14,6 @@ const Home = () => {
   const intervalId = useRef(null);
 
   useEffect(() => {
-    dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
     }, delay);

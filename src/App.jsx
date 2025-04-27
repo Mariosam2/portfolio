@@ -8,10 +8,18 @@ import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
 import { useEffect, useRef } from "react";
 import homeIcon from "./assets/home.png";
+import { loading } from "./slices/loadingSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
   const cursorRef = useRef(null);
   const routePath = useLocation().pathname;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("loading");
+    dispatch(loading());
+  }, [routePath]);
 
   const ShowHomeLink = () => {
     if (routePath !== "/") {

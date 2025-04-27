@@ -7,17 +7,15 @@ import Loader from "./Loader";
 
 const CodingSkills = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const { isLoading, delay } = useSelector((state) => state.loadingState);
   const codingSkills = useRef(
     JSON.parse(JSON.stringify(codingSkillsJSON.coding_skills))
   );
+
   useEffect(() => {
-    console.log(isLoading);
-    dispatch(loading());
-    console.log(isLoading);
     setTimeout(() => {
       dispatch(finishedLoading());
-    }, 500);
+    }, delay);
   }, []);
 
   return (

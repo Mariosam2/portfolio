@@ -15,7 +15,6 @@ const ProjectsComponent = () => {
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   useEffect(() => {
-    dispatch(loading());
     setTimeout(() => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
@@ -49,10 +48,9 @@ const ProjectsComponent = () => {
       >
         {projects.current.map((project, index) => {
           return (
-            <div className="cursor-pointer">
+            <div key={index} className="cursor-pointer">
               <PhoneApp
                 index={index}
-                key={index}
                 icon={project.icon}
                 title={project.name}
               />

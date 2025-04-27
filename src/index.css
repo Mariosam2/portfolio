@@ -133,7 +133,6 @@ section {
 
 section.loading {
   opacity: 0;
-  transition: opacity 0.25s ease-out;
 }
 
 @keyframes LightPulse {
