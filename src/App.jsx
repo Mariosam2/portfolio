@@ -77,7 +77,10 @@ function App() {
         <div className="layover glass -z-30"></div>
         <div className="scrolling-text -z-20">
           <div className="RightToLeft   flex ">
-            <svg className="w-screen mx-4 xxs:mx-8">
+            <svg
+              className="w-screen mx-4 xxs:mx-8"
+              style={{ maskImage: `url(${TextImg})` }}
+            >
               <defs>
                 <filter id="trans-shadow">
                   <feGaussianBlur stdDeviation="5" />
@@ -92,7 +95,10 @@ function App() {
                 href={TextImg}
               />
             </svg>
-            <svg className="w-screen mx-4 xxs:mx-8">
+            <svg
+              className="w-screen mx-4 xxs:mx-8"
+              style={{ maskImage: `url(${TextImg})` }}
+            >
               <defs>
                 <filter id="trans-shadow">
                   <feGaussianBlur stdDeviation="5" />
