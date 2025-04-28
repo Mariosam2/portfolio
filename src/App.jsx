@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      <div className="app h-screen  z-0 relative overflow-x-clip overflow-y-visible">
+      <div className="app min-h-screen  z-0 relative overflow-x-clip overflow-y-visible">
         <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}
