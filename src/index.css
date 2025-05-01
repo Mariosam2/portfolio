@@ -86,7 +86,7 @@
 }
 
 .RightToLeft svg {
-  filter: blur(100px) saturate(180%);
+  filter: blur(100px) saturate(300%);
   background: linear-gradient(
     to right,
     transparent,
