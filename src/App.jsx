@@ -64,14 +64,14 @@ function App() {
   return (
     <>
       <div className="app min-h-screen   z-0 relative overflow-x-clip overflow-y-visible">
-        {/* <Navbar
+        <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}
           moveCursor={moveCursor}
           handleMouseDown={handleMouseDown}
           handleMouseUp={handleMouseUp}
-        /> */}
-        <div ref={cursorRef} id="cursor"></div>
+        />
+        <div ref={cursorRef} id="cursor" className="hidden sm:block"></div>
         <div className="light hidden sm:block -z-40 top-[-10%] sm:top-1/6 left-1/5"></div>
         <div className="light hidden sm:block -z-40 top-[-5%] sm:top-1/3 left-1/3"></div>
         <div className="layover glass -z-30"></div>
