@@ -76,10 +76,12 @@ function App() {
         <div className="light -z-40 top-1/3 left-1/3"></div>
         <div className="layover glass -z-30"></div>
         <div className="scrolling-text -z-20">
-          <div className="RightToLeft   flex ">
+          <div className="RightToLeft w-max relative ">
             <svg
-              className="w-screen mx-4 xxs:mx-8"
-              style={{ maskImage: `url(${TextImg})` }}
+              className="w-[1536px] 2xl:w-screen min-h-[100px]  mx-4 xxs:mx-8 inline-block"
+              style={{
+                maskImage: `url(${TextImg})`,
+              }}
             >
               <defs>
                 <filter id="trans-shadow">
@@ -88,16 +90,18 @@ function App() {
                 </filter>
               </defs>
               <image
-                preserveAspectRatio="none"
-                className="h-[150px]"
+                width="100%"
+                height="100%"
                 filter="url(#trans-shadow)"
                 xlinkHref={TextImg}
                 href={TextImg}
               />
             </svg>
             <svg
-              className="w-screen mx-4 xxs:mx-8"
-              style={{ maskImage: `url(${TextImg})` }}
+              className="w-[1536px] 2xl:w-screen min-h-[100px]  mx-4 xxs:mx-8 inline-block"
+              style={{
+                maskImage: `url(${TextImg})`,
+              }}
             >
               <defs>
                 <filter id="trans-shadow">
@@ -106,7 +110,8 @@ function App() {
                 </filter>
               </defs>
               <image
-                className="h-[150px]"
+                width="100%"
+                height="100%"
                 filter="url(#trans-shadow)"
                 preserveAspectRatio="none"
                 xlinkHref={TextImg}
@@ -115,7 +120,6 @@ function App() {
             </svg>
           </div>
         </div>
-
         <div className="iphone-container">
           <div className="iphone-img-container absolute w-max top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
             <img className="iphone-img relative z-5" src={IphoneImg} alt="" />

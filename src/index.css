@@ -76,9 +76,11 @@
 
 /* infinite scroll animation */
 .scrolling-text {
+  place-self: start;
   position: absolute;
   overflow: clip;
-  bottom: 0;
+  left: 0;
+  top: 700px;
   margin: 0;
 }
 
@@ -125,7 +127,7 @@
   position: relative;
   margin-inline: auto;
   max-width: 365px;
-
+  width: 100%;
   padding-top: 5rem;
 }
 
@@ -210,6 +212,9 @@ section.loading {
 
   section {
     padding-top: 4.5rem;
+  }
+  .scrolling-text {
+    top: 650px;
   }
 }
 
