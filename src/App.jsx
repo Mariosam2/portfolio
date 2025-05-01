@@ -9,18 +9,25 @@ import IphoneImg from "./assets/iphone.png";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import homeIcon from "./assets/home.png";
 import { loading } from "./slices/loadingSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TextImg from "./assets/text.svg";
 
 function App() {
   const cursorRef = useRef(null);
   const routePath = useLocation().pathname;
   const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.cardState);
 
   useEffect(() => {
     console.log("loading");
     dispatch(loading());
   }, [routePath]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = "hidden";
+    }
+  }, [isOpen]);
 
   const ShowHomeLink = () => {
     if (routePath !== "/") {
@@ -63,7 +70,7 @@ function App() {
 
   return (
     <>
-      <div className="app min-h-[730px] sm:min-h-[830px] h-screen   z-0 relative overflow-x-clip overflow-y-visible">
+      <div className="app min-h-[730px] sm:min-h-[830px] h-screen   z-0 relative overflow-x-clip">
         <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}
@@ -74,7 +81,7 @@ function App() {
         <div ref={cursorRef} id="cursor" className="hidden sm:block"></div>
         <div className="light hidden sm:block -z-40 top-[-10%] sm:top-1/6 left-1/5"></div>
         <div className="light hidden sm:block -z-40 top-[-5%] sm:top-1/3 left-1/3"></div>
-        <div className="layover glass -z-30"></div>
+        <div className="layover absolute glass -z-30"></div>
         <div className="scrolling-text -z-20">
           <div className="RightToLeft w-max relative ">
             <svg
@@ -124,7 +131,7 @@ function App() {
           <div className="iphone-img-container absolute w-max top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
             <img className="iphone-img relative z-5" src={IphoneImg} alt="" />
             <div className="iphone-background z-4">
-              <div className="layover layover-iphone"></div>
+              <div className="layover absolute layover-iphone"></div>
             </div>
             <div className="dinamic-component z-6  text-white    ">
               <div className="content relative  h-full">

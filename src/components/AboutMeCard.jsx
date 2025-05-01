@@ -48,15 +48,15 @@ const AboutMeCard = () => {
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
         <div className="content relative z-9">
-          <div className=" mb-2  flex items-center p-2">
+          <div className=" mb-0 xxs:mb-2  flex items-center p-2">
             <img
-              className="size-10 xxs:size-12  me-3 rounded-xl"
+              className="size-8 xxs:size-12  me-3 rounded-xl"
               src={aboutMeImg}
               alt=""
             />
-            <h2 className="heading font-bold text-2xl">About Me</h2>
+            <h2 className="heading font-bold text-xl sm:text-2xl">About Me</h2>
           </div>
-          <p className=" font-light p-2 rounded-xl text-sm sm:text-base ">
+          <p className=" font-light p-2 rounded-xl text-[0.8rem] sm:text-base ">
             My name is Marco Mariosa, I’m 23 years old, and I have a strong
             passion for motorcycles, video games, technology and whatever takes
             creativity. My journey into the world of computers began at the age
@@ -74,7 +74,7 @@ const AboutMeCard = () => {
             <a
               href="./my_curriculum.pdf"
               target="_blank"
-              className="pdf-link flex text-sm sm:text-base  items-center p-2 bg-white text-black max-w-fit rounded-xl me-3"
+              className="pdf-link flex text-[0.8rem] sm:text-base items-center p-2 bg-white text-black max-w-fit rounded-xl me-3"
             >
               Curriculum Vitae
               <ArrowTopRightOnSquareIcon className="size-6 ms-2  mb-1" />
@@ -83,7 +83,7 @@ const AboutMeCard = () => {
             <a
               href="./boolean.pdf"
               target="_blank"
-              className="pdf-link flex text-sm sm:text-base items-center p-2  bg-white text-black  max-w-fit rounded-xl"
+              className="pdf-link flex text-[0.8rem] sm:text-base items-center p-2  bg-white text-black  max-w-fit rounded-xl"
             >
               Boolean Course
               <ArrowTopRightOnSquareIcon className="size-6 ms-2 mb-1" />
