@@ -6,7 +6,7 @@ import CodingSkills from "./components/CodingSkills";
 import Contacts from "./components/Contacts";
 import AboutMe from "./components/AboutMe";
 import IphoneImg from "./assets/iphone.png";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import homeIcon from "./assets/home.png";
 import { loading } from "./slices/loadingSlice";
 import { useDispatch } from "react-redux";
@@ -63,7 +63,7 @@ function App() {
 
   return (
     <>
-      <div className="app min-h-screen   z-0 relative overflow-x-clip overflow-y-visible">
+      <div className="app min-h-[730px] sm:min-h-[830px] h-screen   z-0 relative overflow-x-clip overflow-y-visible">
         <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}

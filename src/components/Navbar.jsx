@@ -54,7 +54,7 @@ const Navbar = ({
   return (
     <>
       <nav
-        className="navbar hidden sm:grid  grid-cols-2 grid-rows-2 absolute w-full h-screen -z-10
+        className="navbar hidden sm:grid  grid-cols-2 grid-rows-2 absolute w-full min-h-[830px] h-screen -z-10
      text-white "
       >
         {navLinks.map((navLink, index) => {

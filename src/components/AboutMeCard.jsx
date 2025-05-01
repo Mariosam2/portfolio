@@ -50,7 +50,7 @@ const AboutMeCard = () => {
         <div className="content relative z-9">
           <div className=" mb-2  flex items-center p-2">
             <img
-              className="size-10 xxs:size-12  me-3"
+              className="size-10 xxs:size-12  me-3 rounded-xl"
               src={aboutMeImg}
               alt=""
             />
@@ -71,27 +71,23 @@ const AboutMeCard = () => {
           </p>
 
           <div className="pdf-links pt-4 flex flex-wrap xs:flex-nowrap gap-y-2 xs:gap-y-0">
-            <div className="pdf-link flex  items-center p-2 bg-white text-black max-w-fit rounded-xl me-3">
-              <a
-                className="inline-block text-sm sm:text-base"
-                href="./curriculum.pdf"
-                target="_blank"
-              >
-                Curriculum Vitae
-              </a>
+            <a
+              href="./curriculum.pdf"
+              target="_blank"
+              className="pdf-link flex text-sm sm:text-base  items-center p-2 bg-white text-black max-w-fit rounded-xl me-3"
+            >
+              Curriculum Vitae
               <ArrowTopRightOnSquareIcon className="size-6 ms-2  mb-1" />
-            </div>
+            </a>
 
-            <div className="pdf-link flex items-center p-2  bg-white text-black  max-w-fit rounded-xl">
-              <a
-                className="inline-block text-sm sm:text-base"
-                href="./boolean.pdf"
-                target="_blank"
-              >
-                Boolean Course
-              </a>
+            <a
+              href="./boolean.pdf"
+              target="_blank"
+              className="pdf-link flex text-sm sm:text-base items-center p-2  bg-white text-black  max-w-fit rounded-xl"
+            >
+              Boolean Course
               <ArrowTopRightOnSquareIcon className="size-6 ms-2 mb-1" />
-            </div>
+            </a>
           </div>
         </div>
       </animated.div>

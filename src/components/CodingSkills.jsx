@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import * as codingSkillsJSON from "../assets/coding_skills.json";
 import PhoneApp from "./PhoneApp";
 import { useDispatch, useSelector } from "react-redux";
-import { finishedLoading, loading } from "../slices/loadingSlice";
+import { finishedLoading } from "../slices/loadingSlice";
 import Loader from "./Loader";
 
 const CodingSkills = () => {
