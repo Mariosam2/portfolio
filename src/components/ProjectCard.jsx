@@ -6,13 +6,17 @@ import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProjectCard = () => {
   const project = useSelector((state) => state.projectState.project);
   const dispatch = useDispatch();
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
   const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [project]);
 
   const ShowApis = () => {
     if (project?.APIs?.length > 0) {
