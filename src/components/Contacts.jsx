@@ -75,7 +75,7 @@ const Contacts = () => {
       {/* the loader component "knows" wheter or not be shown */}
       <Loader />
       <section className={`contacts ${isLoading ? "loading" : ""}`}>
-        <div className="grid grid-cols-3  ">
+        <div className="grid grid-cols-4 gap-x-1 sm:gap-x-3 ">
           {contacts.current?.map((contact, index) => {
             return (
               <div

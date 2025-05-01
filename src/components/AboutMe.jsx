@@ -35,7 +35,7 @@ const AboutMe = () => {
       {/* the loader component "knows" wheter or not be shown */}
       <Loader />
       <section className={`about-me ${isLoading ? "loading" : ""}`}>
-        <div className="grid grid-cols-4 gap-x-1">
+        <div className="grid grid-cols-4 ">
           <div className="cursor-pointer">
             <PhoneApp icon={AboutMeIcon} title={"About Me"} />
           </div>
