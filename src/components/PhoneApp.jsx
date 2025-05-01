@@ -16,9 +16,9 @@ const PhoneApp = ({ index, icon, title }) => {
   return (
     <div
       data-index={index !== null ? index : ""}
-      className={`phone-app flex flex-col ${
-        routePath !== "/contacts" ? "justify-center items-center" : ""
-      }  p-1 `}
+      className="phone-app flex flex-col 
+       justify-center items-center
+        p-1 "
     >
       <div
         style={{
