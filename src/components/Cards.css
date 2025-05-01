@@ -47,6 +47,10 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.project-card .xmark {
+  background-color: var(--color-ms_dark-purple);
+}
+
 @media screen and (max-width: 430px) {
   .project-card,
   .about-me-card,

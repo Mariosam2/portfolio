@@ -110,7 +110,7 @@ const ProjectCard = () => {
 
         <XMarkIcon
           onClick={() => dispatch(unsetProject())}
-          className="xmark size-6 absolute top-0 right-0 mt-1 me-1 p-0.5  z-11 cursor-pointer rounded-full"
+          className="xmark size-7 absolute top-0 right-0 mt-1 me-1 p-0.5  z-11 cursor-pointer rounded-full"
         />
         <ProjectImg />
         <div className="content relative z-9  p-4 ">
