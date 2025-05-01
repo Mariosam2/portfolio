@@ -72,7 +72,6 @@
 
   animation: LightPulse 5s infinite ease-in-out;
   animation-direction: alternate-reverse;
-  -webkit-animation-direction: alternate-reverse;
 }
 
 /* infinite scroll animation */
