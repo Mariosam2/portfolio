@@ -96,7 +96,8 @@
     #b7e7f7,
     white 40%,
     transparent,
-    var(--color-ms_purple) 60%,
+    var(--color-ms_purple),
+    white 60%,
     transparent,
     #b7e7f7 80%,
     white 100%
