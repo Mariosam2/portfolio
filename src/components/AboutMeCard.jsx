@@ -72,7 +72,7 @@ const AboutMeCard = () => {
 
           <div className="pdf-links pt-4 flex flex-wrap xs:flex-nowrap gap-y-2 xs:gap-y-0">
             <a
-              href="./curriculum.pdf"
+              href="./my_curriculum.pdf"
               target="_blank"
               className="pdf-link flex text-sm sm:text-base  items-center p-2 bg-white text-black max-w-fit rounded-xl me-3"
             >
