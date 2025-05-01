@@ -24,7 +24,7 @@
 .app {
   background: radial-gradient(
     ellipse 100% 100% at top center,
-    var(--color-ms_light-purple),
+    var(--color-ms_dark-purple),
     var(--color-ms_purple) 40%,
     var(--color-ms_dark-purple) 60%,
     black 100%

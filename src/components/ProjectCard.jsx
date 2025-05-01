@@ -6,11 +6,13 @@ import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 const ProjectCard = () => {
   const project = useSelector((state) => state.projectState.project);
   const dispatch = useDispatch();
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const ShowApis = () => {
     if (project?.APIs?.length > 0) {
@@ -95,6 +97,12 @@ const ProjectCard = () => {
     });
   };
 
+  const handleOnLoad = () => {
+    setTimeout(() => {
+      setImgLoaded(true);
+    }, 500);
+  };
+
   return (
     <>
       <animated.div
@@ -105,14 +113,26 @@ const ProjectCard = () => {
         onMouseMove={handleMouseMove}
         style={{ transform: xy.to(transformToCss) }}
       >
-        <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
+
         <XMarkIcon
           onClick={() => dispatch(unsetProject())}
-          className="size-6 absolute top-0 right-0 mt-1 me-1 p-0.5  z-10 cursor-pointer"
+          className="xmark size-6 absolute top-0 right-0 mt-1 me-1 p-0.5  z-11 cursor-pointer rounded-full"
         />
-        <div className="project-img-container relative z-9 px-4 pt-8">
-          <img className="rounded-xl" src={project?.image} alt="" />
+        <div className="project-img-container relative z-9 ">
+          <div
+            className={`project-img-loader absolute top-0 h-[180px] w-full ${
+              !imgLoaded ? "block" : "hidden"
+            }`}
+          ></div>
+          <img
+            className={`project-img roundedt-t-xl  h-[180px] w-full object-cover ${
+              imgLoaded ? "loaded" : ""
+            }`}
+            src={project?.image}
+            alt=""
+            onLoad={handleOnLoad}
+          />
         </div>
         <div className="content relative z-9  p-4 ">
           <div className="project-heading flex  items-center">
@@ -138,7 +158,7 @@ const ProjectCard = () => {
             </div>
           </div>
 
-          <p className="font-light  text-sm sm:text-base py-4">
+          <p className="font-light  text-sm sm:text-base text-justify py-4">
             {project?.description}
           </p>
           <div className="card-footer grid grid-cols-2">

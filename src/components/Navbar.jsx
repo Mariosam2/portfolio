@@ -76,7 +76,9 @@ const Navbar = ({
                   right: navLink.rotate === "right" ? 0 : "unset",
                 }}
               >
-                &#123;{navLink.content}&#125;
+                {navLink.content === "coding skills" ? "{" : ""}
+                {navLink.content}
+                {navLink.content === "coding skills" ? "}" : ""}
               </span>
             </NavLink>
           );
