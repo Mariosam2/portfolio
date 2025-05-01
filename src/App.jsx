@@ -16,7 +16,8 @@ function App() {
   const cursorRef = useRef(null);
   const routePath = useLocation().pathname;
   const dispatch = useDispatch();
-  const isOpen = useSelector((state) => state.cardState);
+  const { isOpen } = useSelector((state) => state.cardState);
+  const { project } = useSelector((state) => state.projectState);
 
   useEffect(() => {
     console.log("loading");
@@ -24,10 +25,13 @@ function App() {
   }, [routePath]);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflowY = "hidden";
-    }
-  }, [isOpen]);
+    isOpen
+      ? (document.body.style.overflowY = "hidden")
+      : (document.body.style.overflowY = "visible");
+    project !== null
+      ? (document.body.style.overflowY = "hidden")
+      : (document.body.style.overflowY = "visible");
+  }, [isOpen, project]);
 
   const ShowHomeLink = () => {
     if (routePath !== "/") {
@@ -70,7 +74,7 @@ function App() {
 
   return (
     <>
-      <div className="app min-h-[730px] sm:min-h-[830px] h-screen   z-0 relative overflow-x-clip">
+      <div className="app min-h-[730px] sm:min-h-[830px] h-screen   z-0 relative overflow-x-clip overflow-y-visible">
         <Navbar
           showCursor={showCursor}
           hidCursor={hidCursor}

@@ -6,17 +6,12 @@ import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
+import ProjectImg from "./ProjectImg";
 
 const ProjectCard = () => {
-  const project = useSelector((state) => state.projectState.project);
+  const { project } = useSelector((state) => state.projectState);
   const dispatch = useDispatch();
   const [{ xy }, api] = useSpring(() => ({ xy: [0, 0], config }), [config]);
-  const [imgLoaded, setImgLoaded] = useState(false);
-
-  useEffect(() => {
-    setImgLoaded(false);
-  }, [project]);
 
   const ShowApis = () => {
     if (project?.APIs?.length > 0) {
@@ -27,11 +22,11 @@ const ProjectCard = () => {
             {project.APIs.map((api, index) => {
               return (
                 <a
+                  key={index}
                   className="grid place-items-center ms-2 pt-2"
                   href={api.link}
                 >
                   <img
-                    key={index}
                     className="w-12 h-6  object-contain"
                     src={api.icon}
                     alt=""
@@ -101,12 +96,6 @@ const ProjectCard = () => {
     });
   };
 
-  const handleOnLoad = () => {
-    setTimeout(() => {
-      setImgLoaded(true);
-    }, 500);
-  };
-
   return (
     <>
       <animated.div
@@ -123,21 +112,7 @@ const ProjectCard = () => {
           onClick={() => dispatch(unsetProject())}
           className="xmark size-6 absolute top-0 right-0 mt-1 me-1 p-0.5  z-11 cursor-pointer rounded-full"
         />
-        <div className="project-img-container relative z-9 ">
-          <div
-            className={`project-img-loader absolute top-0 h-[180px] w-full ${
-              !imgLoaded ? "block" : "hidden"
-            }`}
-          ></div>
-          <img
-            className={`project-img roundedt-t-xl  h-[180px] w-full object-cover ${
-              imgLoaded ? "loaded" : ""
-            }`}
-            src={project?.image}
-            alt=""
-            onLoad={handleOnLoad}
-          />
-        </div>
+        <ProjectImg />
         <div className="content relative z-9  p-4 ">
           <div className="project-heading flex  items-center">
             <h4 className="text-2xl font-semibold">{project?.name}</h4>
