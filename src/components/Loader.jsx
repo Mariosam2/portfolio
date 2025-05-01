@@ -6,7 +6,7 @@ const Loader = () => {
     <div
       className={`loader-container ${
         isLoading ? "block" : "hidden"
-      } absolute top-2/5 left-1/2 translate-x-[-50%] translate-y-[-50%] p-4`}
+      } absolute top-1/2  left-1/2 translate-x-[-50%] translate-y-[-50%] p-4`}
     >
       <div className="loader"></div>
     </div>
