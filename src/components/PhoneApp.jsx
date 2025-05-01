@@ -1,22 +1,11 @@
 import { useLocation } from "react-router";
 import "./PhoneApp.css";
-import ClipboardIcon from "./ClipboardIcon";
 
 const PhoneApp = ({ index, icon, title }) => {
   const routePath = useLocation().pathname;
 
-  const ShowClipboard = () => {
-    if (routePath === "/contacts") {
-      return (
-        <div className="clipboard absolute grid place-items-center">
-          <ClipboardIcon />
-        </div>
-      );
-    }
-  };
-
   const ShowTitle = () => {
-    if (routePath !== "/contacts") {
+    if (title) {
       return (
         <h5 className="font-medium text-xs sm:text-sm lg:text-base text-white mt-2 text-nowrap">
           {title}
@@ -39,9 +28,7 @@ const PhoneApp = ({ index, icon, title }) => {
           backgroundRepeat: "no-repeat",
         }}
         className={`phone-img-container w-full  h-[40px] sm:h-[50px] relative rounded-xl`}
-      >
-        <ShowClipboard />
-      </div>
+      ></div>
 
       <ShowTitle />
     </div>
