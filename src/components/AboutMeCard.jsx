@@ -1,11 +1,11 @@
 import "./Cards.css";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import avatarImg from "../assets/avatar_pc_nobg.png";
 import aboutMeImg from "../assets/aboutme.png";
 import { close } from "../slices/cardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
 import { animated, useSpring } from "@react-spring/web";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const AboutMeCard = () => {
   const dispatch = useDispatch();
@@ -45,6 +45,10 @@ const AboutMeCard = () => {
           isOpen ? "visible" : ""
         }`}
       >
+        <XMarkIcon
+          onClick={() => dispatch(close())}
+          className="size-6 absolute top-0 right-0 m-2  z-10 cursor-pointer"
+        />
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
         <div className="content relative z-9">
@@ -56,7 +60,7 @@ const AboutMeCard = () => {
             />
             <h2 className="heading font-bold text-xl sm:text-2xl">About Me</h2>
           </div>
-          <p className=" font-light p-2 rounded-xl text-[0.8rem] sm:text-base ">
+          <p className=" font-light p-2 rounded-xl text-[0.8rem] sm:text-base text-justify">
             My name is Marco Mariosa, I’m 23 years old, and I have a strong
             passion for motorcycles, video games, technology and whatever takes
             creativity. My journey into the world of computers began at the age

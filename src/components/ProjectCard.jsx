@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { unsetProject } from "../slices/projectSlice";
 import { animated, useSpring } from "@react-spring/web";
 import { config, transformToCss, calc } from "../assets/cardAnimation";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const ProjectCard = () => {
   const project = useSelector((state) => state.projectState.project);
@@ -106,8 +107,11 @@ const ProjectCard = () => {
       >
         <div className="glow top-left"></div>
         <div className="glow right-bottom"></div>
-
-        <div className="project-img-container relative z-9 p-4">
+        <XMarkIcon
+          onClick={() => dispatch(unsetProject())}
+          className="size-6 absolute top-0 right-0 mt-1 me-1 p-0.5  z-10 cursor-pointer"
+        />
+        <div className="project-img-container relative z-9 px-4 pt-8">
           <img className="rounded-xl" src={project?.image} alt="" />
         </div>
         <div className="content relative z-9  p-4 ">

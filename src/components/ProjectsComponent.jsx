@@ -5,8 +5,9 @@ import { setProject } from "../slices/projectSlice";
 import PhoneApp from "./PhoneApp";
 import ProjectCard from "./ProjectCard";
 import { createPortal } from "react-dom";
-import { finishedLoading, loading } from "../slices/loadingSlice";
+import { finishedLoading } from "../slices/loadingSlice";
 import Loader from "./Loader";
+import { unsetProject } from "../slices/projectSlice";
 
 const ProjectsComponent = () => {
   const projects = useRef(JSON.parse(JSON.stringify(projectsJSON.projects)));
@@ -19,6 +20,7 @@ const ProjectsComponent = () => {
       dispatch(finishedLoading());
       setIsComponentReady(true);
     }, delay);
+    dispatch(unsetProject());
   }, []);
 
   //adding eventlisteners "manually" cause I couldn't attach them directly to the component

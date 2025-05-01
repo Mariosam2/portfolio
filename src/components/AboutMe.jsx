@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import AboutMeCard from "./AboutMeCard";
 import { useDispatch, useSelector } from "react-redux";
 import { open } from "../slices/cardSlice";
-import { finishedLoading, loading } from "../slices/loadingSlice";
+import { finishedLoading } from "../slices/loadingSlice";
 import Loader from "./Loader";
 
 const AboutMe = () => {
