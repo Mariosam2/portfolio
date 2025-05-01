@@ -1,0 +1,23 @@
+.project-img-loader {
+  background: linear-gradient(110deg, #71797e 8%, #e5e4e2 18%, #71797e 33%);
+  animation: prova 1s linear infinite;
+  background-size: 200% 100%;
+}
+
+.project-img {
+  opacity: 0;
+}
+
+.project-img.loaded {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+.project-card .xmark {
+  background-color: var(--color-ms_dark-purple);
+}
+
+@keyframes prova {
+  to {
+    background-position-x: -200%;
+  }
+}

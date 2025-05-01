@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import "./Cards.css";
+import "./ProjectImg.css";
 
 const ProjectImg = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
