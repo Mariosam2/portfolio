@@ -25,7 +25,7 @@ const CodingSkills = () => {
       <section
         className={`coding-skills ${
           isLoading ? "loading" : ""
-        } grid grid-cols-3`}
+        } grid grid-cols-4 gap-x-1 sm:gap-x-3`}
       >
         {codingSkills.current.map((skill, index) => {
           return (

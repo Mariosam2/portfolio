@@ -75,7 +75,7 @@ const Home = () => {
         className={`home h-full  relative ${isLoading ? "loading" : ""}`}
       >
         <div className="content pt-12">
-          <div className="date flex justify-center">
+          <div className="date text-sm sm:text-base flex justify-center">
             <span>{date?.day}</span>
           </div>
           <div className="time flex justify-center">
@@ -85,12 +85,12 @@ const Home = () => {
           </div>
         </div>
         <img
-          className="flashlight size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-8"
+          className="flashlight size-10 sm:size-12 p-1 bg-ms_dark-gray rounded-full absolute left-4 bottom-6 sm:bottom-8"
           src={flashlightIcon}
           alt=""
         />
         <img
-          className="camera size-10 xs:size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-8"
+          className="camera size-10 sm:size-12 p-1 bg-ms_dark-gray rounded-full  absolute right-4 bottom-6 sm:bottom-8"
           src={cameraIcon}
           alt=""
         />

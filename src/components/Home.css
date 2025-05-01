@@ -13,8 +13,8 @@
   }
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 649px) {
   .time {
-    font-size: 64px;
+    font-size: 58px;
   }
 }

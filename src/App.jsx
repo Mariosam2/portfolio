@@ -26,10 +26,10 @@ function App() {
     if (routePath !== "/") {
       return (
         <NavLink
-          className="absolute bottom-2 xxs:bottom-4 md:bottom-6 left-1/2 translate-x-[-50%]"
+          className="absolute bottom-4 left-1/2 translate-x-[-50%]"
           to={"/"}
         >
-          <img className="size-6 xxs:size-8" src={homeIcon} alt="" />
+          <img className="size-6 sm:size-8" src={homeIcon} alt="" />
         </NavLink>
       );
     }
@@ -88,8 +88,8 @@ function App() {
                 </filter>
               </defs>
               <image
-                width={100 + "%"}
-                className="h-[100px] lg:h-[150px]"
+                preserveAspectRatio="none"
+                className="h-[150px]"
                 filter="url(#trans-shadow)"
                 xlinkHref={TextImg}
                 href={TextImg}
@@ -106,9 +106,9 @@ function App() {
                 </filter>
               </defs>
               <image
-                width={100 + "%"}
-                className="h-[100px] lg:h-[150px]"
+                className="h-[150px]"
                 filter="url(#trans-shadow)"
+                preserveAspectRatio="none"
                 xlinkHref={TextImg}
                 href={TextImg}
               />
@@ -117,21 +117,22 @@ function App() {
         </div>
 
         <div className="iphone-container">
-          <img className="iphone-img relative z-5" src={IphoneImg} alt="" />
-          <div className="iphone-background z-4">
-            <div className="layover layover-iphone"></div>
-          </div>
-
-          <div className="dinamic-component z-6  text-white  @container  ">
-            <div className="content relative  h-full">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/coding-skills" element={<CodingSkills />} />
-                <Route path="/projects" element={<ProjectsComponent />} />
-                <Route path="/about-me" element={<AboutMe />} />
-                <Route path="/contacts" element={<Contacts />} />
-              </Routes>
-              <ShowHomeLink />
+          <div className="iphone-img-container absolute w-max top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+            <img className="iphone-img relative z-5" src={IphoneImg} alt="" />
+            <div className="iphone-background z-4">
+              <div className="layover layover-iphone"></div>
+            </div>
+            <div className="dinamic-component z-6  text-white    ">
+              <div className="content relative  h-full">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/coding-skills" element={<CodingSkills />} />
+                  <Route path="/projects" element={<ProjectsComponent />} />
+                  <Route path="/about-me" element={<AboutMe />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                </Routes>
+                <ShowHomeLink />
+              </div>
             </div>
           </div>
         </div>

@@ -84,7 +84,7 @@ const Navbar = ({
       </nav>
       <div
         onClick={toggleMobileNav}
-        className={`burger flex flex-col sm:hidden  gap-y-1 p-4 relative z-2`}
+        className={`burger flex flex-col sm:hidden  gap-y-1 p-4 pt-6 relative z-2 self-start`}
       >
         <div
           className={`line ${

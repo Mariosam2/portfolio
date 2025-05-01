@@ -9,6 +9,14 @@
       "img": "./css.png"
     },
     {
+      "name": "JS",
+      "img": "./javascript.png"
+    },
+    {
+      "name": "Tailwind",
+      "img": "./tailwind.png"
+    },
+    {
       "name": "Saas",
       "img": "./sass.png"
     },
@@ -16,14 +24,7 @@
       "name": "Bootstrap",
       "img": "./bootstrap.png"
     },
-    {
-      "name": "Tailwind",
-      "img": "./tailwind.png"
-    },
-    {
-      "name": "Javascript",
-      "img": "./javascript.png"
-    },
+
     {
       "name": "VueJS",
       "img": "./vue.png"

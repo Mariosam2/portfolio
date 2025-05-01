@@ -44,16 +44,12 @@ const ProjectsComponent = () => {
       <section
         className={`projects ${
           isLoading ? "loading" : ""
-        } relative w-full  grid grid-cols-3`}
+        } relative w-full  grid grid-cols-4 gap-x-1`}
       >
         {projects.current.map((project, index) => {
           return (
             <div key={index} className="cursor-pointer">
-              <PhoneApp
-                index={index}
-                icon={project.icon}
-                title={project.name}
-              />
+              <PhoneApp index={index} icon={project.icon} />
             </div>
           );
         })}
