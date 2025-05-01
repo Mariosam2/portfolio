@@ -80,7 +80,8 @@
   position: absolute;
   overflow: clip;
   left: 0;
-  top: 700px;
+  top: calc(50% + 300px);
+  translate: 0 -25%;
   margin: 0;
 }
 
@@ -214,7 +215,8 @@ section.loading {
     padding-top: 4.5rem;
   }
   .scrolling-text {
-    top: 550px;
+    translate: 0 0;
+    top: 575px;
   }
 }
 
