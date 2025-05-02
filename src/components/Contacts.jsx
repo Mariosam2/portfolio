@@ -23,7 +23,7 @@ const Contacts = () => {
           className="
           contact relative"
           href={
-            contactObj.name === "e-mail"
+            contactObj.name === "mail"
               ? `mailto:${contactObj.content}`
               : contactObj.content
           }
