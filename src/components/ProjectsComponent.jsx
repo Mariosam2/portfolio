@@ -51,7 +51,11 @@ const ProjectsComponent = () => {
         {projects.current.map((project, index) => {
           return (
             <div key={index} className="cursor-pointer">
-              <PhoneApp index={index} icon={project.icon} />
+              <PhoneApp
+                index={index}
+                icon={project.icon}
+                title={project.title}
+              />
             </div>
           );
         })}

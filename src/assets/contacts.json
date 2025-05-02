@@ -1,7 +1,7 @@
 {
   "contacts": [
     {
-      "name": "e-mail",
+      "name": "mail",
       "icon": "./mail.png",
       "content": "mariosamdev@gmail.com"
     },

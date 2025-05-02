@@ -1,14 +1,21 @@
 import { useLocation } from "react-router";
 import "./PhoneApp.css";
 
-const PhoneApp = ({ index, icon, title }) => {
+const PhoneApp = ({ index, icon, title, discordId }) => {
   const routePath = useLocation().pathname;
 
   const ShowTitle = () => {
     if (title) {
       return (
-        <h5 className="font-medium text-xs sm:text-sm lg:text-base text-white mt-2 text-nowrap">
+        <h5 className="font-medium text-xs sm:text-sm lg:text-base capitalize text-white mt-2 text-nowrap">
           {title}
+        </h5>
+      );
+    }
+    if (discordId) {
+      return (
+        <h5 className="font-medium text-xs sm:text-sm lg:text-base  text-white mt-2 text-nowrap">
+          {discordId}
         </h5>
       );
     }

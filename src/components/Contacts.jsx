@@ -17,7 +17,7 @@ const Contacts = () => {
   }, []);
 
   const ShowContact = ({ contactObj }) => {
-    if (contactObj.name === "e-mail" || contactObj.name === "github") {
+    if (contactObj.name === "mail" || contactObj.name === "github") {
       return (
         <a
           className="
@@ -29,7 +29,7 @@ const Contacts = () => {
           }
           target="_blank"
         >
-          <PhoneApp icon={contactObj.icon} />
+          <PhoneApp icon={contactObj.icon} title={contactObj.name} />
         </a>
       );
     } else {
@@ -38,7 +38,7 @@ const Contacts = () => {
           className="
         contact relative"
         >
-          <PhoneApp icon={contactObj.icon} title={contactObj.content} />
+          <PhoneApp icon={contactObj.icon} discordId={contactObj.content} />
         </div>
       );
     }
