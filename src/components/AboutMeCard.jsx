@@ -89,7 +89,7 @@ const AboutMeCard = () => {
               target="_blank"
               className="pdf-link flex text-[0.8rem] sm:text-base items-center p-2  bg-white text-black  max-w-fit rounded-xl"
             >
-              Boolean Course
+              Boolean Certificate
               <ArrowTopRightOnSquareIcon className="size-6 ms-2 mb-1" />
             </a>
           </div>

@@ -15,6 +15,29 @@
   rotate: 90deg;
 }
 
+.area .underline {
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.area .rotate-left .underline {
+  transform-origin: left;
+}
+.area .rotate-right .underline {
+  transform-origin: right;
+}
+
+.area:hover .underline {
+  transform: scaleX(1);
+  transition: transform 0.25s ease-out;
+}
+
+.area.active .underline {
+  transform: scaleX(1);
+}
+
 /*Burger animation*/
 
 .burger .line {
@@ -40,6 +63,23 @@
 }
 
 /* Mobile Navbar */
+
+.mobile-navlink .underline {
+  transform-origin: left;
+  transform: scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.mobile-navlink:hover .underline {
+  transform: scaleX(1);
+  transition: transform 0.2s ease-out;
+}
+
+.mobile-navlink.active .underline {
+  transform: scaleX(1);
+}
 
 .ms_mobile-nav {
   position: fixed;

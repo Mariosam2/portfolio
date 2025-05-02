@@ -79,6 +79,7 @@ const Navbar = ({
                 {navLink.content === "coding skills" ? "{" : ""}
                 {navLink.content}
                 {navLink.content === "coding skills" ? "}" : ""}
+                <div className="underline"></div>
               </span>
             </NavLink>
           );
@@ -109,17 +110,22 @@ const Navbar = ({
           showMobileNav ? "visible" : " "
         }`}
       >
-        <NavLink className="text-white p-2 font-semibold text-lg" to={"/"}>
+        <NavLink
+          className="mobile-navlink text-white p-2 font-semibold text-lg w-fit"
+          to={"/"}
+        >
           <span className="capitalize">Home</span>
+          <div className="underline"></div>
         </NavLink>
         {navLinks.map((navLink, index) => {
           return (
             <NavLink
-              className="text-white p-2 font-semibold text-lg"
+              className="mobile-navlink text-white p-2 font-semibold text-lg w-fit"
               key={index}
               to={navLink.path}
             >
               <span className="capitalize">{navLink.content}</span>
+              <div className="underline"></div>
             </NavLink>
           );
         })}
