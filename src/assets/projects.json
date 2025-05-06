@@ -20,7 +20,7 @@
       "name": "Boolflix",
       "title": "Boolflix",
       "icon": "./boolflix.png",
-      "description": "The project is a Netflix-inspired platform built using VueJS.The user can search movies or add them to watchlist.Each movies has a preview  with a trailer made with Youtube iFrame API, and related informations",
+      "description": "The project is a Netflix-inspired platform built using VueJS. The user can search movies or add them to watchlist. Each movies has a preview  with a trailer made with Youtube iFrame API, and related informations",
       "image": "./boolflix_preview.png",
       "demo_site": "https://startling-kataifi-00b11a.netlify.app/",
       "github_links": [
