@@ -5,13 +5,12 @@ import "./ProjectImg.css";
 const ProjectImg = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { project } = useSelector((state) => state.projectState);
-  const { isOpen } = useSelector((state) => state.cardState);
 
   useEffect(() => {
-    if (isOpen) {
+    if (project !== null) {
       setImgLoaded(false);
     }
-  }, [isOpen]);
+  }, [project]);
 
   const handleOnLoad = () => {
     setImgLoaded(true);
