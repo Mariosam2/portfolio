@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "./ProjectImg.css";
 
 const ProjectImg = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { project } = useSelector((state) => state.projectState);
+  const { isOpen } = useSelector((state) => state.cardState);
+
+  useEffect(() => {
+    if (isOpen) {
+      setImgLoaded(false);
+    }
+  }, []);
 
   const handleOnLoad = () => {
     setImgLoaded(true);
