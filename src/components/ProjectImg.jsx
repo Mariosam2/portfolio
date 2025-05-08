@@ -1,19 +1,12 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+
 import "./ProjectImg.css";
 
 const ProjectImg = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
-  const { project } = useSelector((state) => state.projectState);
-
-  useEffect(() => {
-    setImgLoaded(false);
-  }, [project]);
 
   const handleOnLoad = () => {
-    setTimeout(() => {
-      setImgLoaded(true);
-    }, 250);
+    setImgLoaded(true);
   };
 
   return (
@@ -24,7 +17,7 @@ const ProjectImg = () => {
         }`}
       ></div>
       <img
-        className={`project-img roundedt-t-xl  h-[180px] w-full object-cover ${
+        className={`project-img rounded-t-xl  h-[180px] w-full object-cover ${
           imgLoaded ? "loaded" : ""
         }`}
         src={project?.image}

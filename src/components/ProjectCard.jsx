@@ -90,10 +90,12 @@ const ProjectCard = () => {
     });
 
   const handleMouseMove = (e) => {
-    const rectangle = document.body.getBoundingClientRect();
-    api.start({
-      xy: calc(e.clientX, e.clientY, rectangle),
-    });
+    if (window.innerWidth > 768) {
+      const rectangle = document.body.getBoundingClientRect();
+      api.start({
+        xy: calc(e.clientX, e.clientY, rectangle),
+      });
+    }
   };
 
   return (
