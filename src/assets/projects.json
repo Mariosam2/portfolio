@@ -5,7 +5,7 @@
       "title": "Spotify",
       "icon": "./spotify.png",
       "description": "This is a HTML and CSS visual clone of Spotify Web. It attempts to replicate the interface of the popular music streaming platform, focusing on the layout. The main objective was to practice front-end development skills by recreating a real-world UI without using JavaScript or any frameworks",
-      "image": "./spotify_prev.png",
+      "image": "./spotify_prev.webp",
       "demo_site": "https://mariosam2.github.io/html-css-spotifyweb/",
       "github_links": [
         {
@@ -21,7 +21,7 @@
       "title": "Boolflix",
       "icon": "./boolflix.png",
       "description": "The project is a Netflix-inspired platform built using VueJS. The user can search movies or add them to watchlist. Each movies has a preview  with a trailer made with Youtube iFrame API, and related informations",
-      "image": "./boolflix_prev.png",
+      "image": "./boolflix_prev.webp",
       "demo_site": "https://startling-kataifi-00b11a.netlify.app/",
       "github_links": [
         {
@@ -51,7 +51,7 @@
       "title": "BoolBnB",
       "icon": "boolbnb.png",
       "description": "This project is a full-stack Airbnb clone that allows users to search for geolocated rental properties and directly contact hosts via email. Designed to replicate key features of the real Airbnb platform, users can browse apartments based on location using an interactive map. Guests can send inquiries directly to hosts through an integrated email system and if you're an host you can add, edit, delete (CRUD) or sponsorize your apartment.",
-      "image": "./boolbnb_prev.png",
+      "image": "./boolbnb_prev.webp",
       "demo_site": null,
       "github_links": [
         {
@@ -92,7 +92,7 @@
       "title": "Weather",
       "icon": "./weather.png",
       "description": "This project is a Weather App where users can search for cities using an autocomplete feature, and view detailed weather information for the selected location with a 2-Day forecast report.",
-      "image": "./weather_prev.png",
+      "image": "./weather_prev.webp",
       "demo_site": "https://stunning-syrniki-a76acf.netlify.app/",
       "github_links": [
         {
