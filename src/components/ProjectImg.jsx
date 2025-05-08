@@ -1,9 +1,10 @@
 import { useState } from "react";
-
+import { useSelector } from "react-redux";
 import "./ProjectImg.css";
 
 const ProjectImg = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
+  const { project } = useSelector((state) => state.projectState);
 
   const handleOnLoad = () => {
     setImgLoaded(true);
