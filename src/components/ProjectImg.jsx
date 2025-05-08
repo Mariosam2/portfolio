@@ -11,7 +11,7 @@ const ProjectImg = () => {
     if (isOpen) {
       setImgLoaded(false);
     }
-  }, []);
+  }, [isOpen]);
 
   const handleOnLoad = () => {
     setImgLoaded(true);
