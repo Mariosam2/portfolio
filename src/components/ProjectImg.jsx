@@ -13,7 +13,9 @@ const ProjectImg = () => {
   }, [project]);
 
   const handleOnLoad = () => {
-    setImgLoaded(true);
+    setTimeout(() => {
+      setImgLoaded(true);
+    }, 250);
   };
 
   return (
